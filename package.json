@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "format": "prettier -w src/**/*.mjs",
+    "lint": "eslint src/**/*.mjs",
+    "lint-fix": "eslint src/**/*.mjs --cache --fix",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
