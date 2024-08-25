@@ -2,6 +2,7 @@
   "name": "bidpoint-sp2",
   "private": true,
   "version": "0.0.0",
+  "description": "An auction site developed for Semester Project 2 at Noroff",
   "type": "module",
   "scripts": {
     "format": "prettier -w src/**/*.mjs",
@@ -9,15 +10,42 @@
     "lint-fix": "eslint src/**/*.mjs --cache --fix",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aklevjer/bidpoint-sp2.git"
+  },
+  "keywords": [
+    "TailwindCSS",
+    "JavaScript",
+    "Vite"
+  ],
+  "author": "Aleksander Klevjer <alekle53052@stud.noroff.no>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aklevjer/bidpoint-sp2/issues"
+  },
+  "homepage": "https://github.com/aklevjer/bidpoint-sp2#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
+  },
+  "lint-staged": {
+    "*.mjs": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ]
   }
 }
