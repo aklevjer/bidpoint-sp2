@@ -68,7 +68,41 @@
       </div>
     </header>
 
-    <main></main>
+    <main class="container py-20">
+      <section>
+        <h1 class="text-2xl font-bold">Auctions</h1>
+
+        <div class="my-6 flex flex-col justify-between gap-4 sm:flex-row">
+          <div class="space-y-2 sm:basis-52">
+            <label for="search" class="text-m font-semibold">
+              Search for auctions
+            </label>
+
+            <div class="relative">
+              <input
+                type="search"
+                id="search"
+                placeholder="Enter keywords.."
+                class="w-full rounded-md border border-dark-gray p-2 pl-8 outline-none focus:ring-1 focus:ring-dark-gray" />
+
+              <i
+                class="bx bx-search-alt-2 absolute left-2 top-1/2 -translate-y-1/2 text-lg"></i>
+            </div>
+          </div>
+
+          <div class="space-y-2 sm:basis-52">
+            <label for="sort" class="text-m font-semibold">Sort by</label>
+
+            <select
+              id="sort"
+              class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray">
+              <option value="ending">Ending Soon</option>
+              <option value="latest">Latest Added</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="bg-dark-gray text-white">
       <div
