@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/js/**/*.mjs"],
+  content: [
+    "./index.html",
+    "./auctions/*.html",
+    "./auctions/listing/*.html",
+    "./profile/*.html",
+    "./src/js/**/*.mjs",
+  ],
   theme: {
     extend: {
       colors: {
@@ -14,8 +20,17 @@ module.exports = {
         "light-gray": "#FAFAFA",
         white: "#FFFFFF",
       },
+      fontFamily: {
+        sans: ["Manrope", "Helvetica", "Verdana", "sans-serif"],
+        poppins: ["Poppins", "Helvetica", "Verdana", "sans-serif"],
+      },
       fontSize: {
+        sm: "0.875rem;",
         m: "0.9375rem",
+        base: "1rem",
+        lg: "1.125rem",
+        xl: "1.5rem",
+        "2xl": "1.75rem",
       },
       container: {
         center: true,
@@ -23,6 +38,18 @@ module.exports = {
         screens: {
           lg: "1150px",
         },
+      },
+      gridTemplateRows: {
+        layout: "auto 1fr auto",
+      },
+      backgroundImage: {
+        "banner-bg": "url('/assets/banner-background.jpg')",
+      },
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
+      boxShadow: {
+        custom: "0px 0px 8px 0px rgba(0, 0, 0, 0.3)",
       },
     },
   },

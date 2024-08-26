@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse and bid on unique items in our diverse auction listings at BidPoint." />
+    <title>BidPoint - Auctions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Manrope:wght@400;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="/src/css/index.css" />
+  </head>
+  <body class="grid min-h-screen grid-rows-layout">
+    <header class="bg-dark-gray text-white">
+      <div class="container flex h-[76px] items-center justify-between">
+        <div class="flex items-center gap-4">
+          <button
+            id="nav-btn"
+            class="text-2xl md:hidden"
+            aria-expanded="false"
+            aria-label="Menu">
+            <i class="bx bx-menu"></i>
+          </button>
+
+          <a href="/" class="flex items-center gap-2">
+            <img src="/assets/logo.svg" alt="BidPoint logo" />
+            <span class="font-poppins text-lg font-semibold">BidPoint</span>
+          </a>
+        </div>
+
+        <nav
+          class="absolute left-0 top-[76px] hidden w-full bg-dark-gray md:static md:block md:w-auto">
+          <ul
+            class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
+            <li>
+              <a href="/" class="transition-colors hover:text-light-orange">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/auctions/"
+                class="transition-colors hover:text-light-orange">
+                Auctions
+              </a>
+            </li>
+
+            <li>
+              <button class="transition-colors hover:text-light-orange">
+                Sell an Item
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="rounded-md border border-light-orange px-6 py-1.5 font-semibold transition-colors hover:border-white">
+          Login
+        </button>
+      </div>
+    </header>
+
+    <main class="container py-20">
+      <section>
+        <h1 class="text-2xl font-bold">Auctions</h1>
+
+        <div class="my-6 flex flex-col justify-between gap-4 sm:flex-row">
+          <div class="space-y-2 sm:basis-52">
+            <label for="search" class="text-m font-semibold">
+              Search for auctions
+            </label>
+
+            <div class="relative">
+              <input
+                type="search"
+                id="search"
+                placeholder="Enter keywords.."
+                class="w-full rounded-md border border-dark-gray p-2 pl-8 outline-none focus:ring-1 focus:ring-dark-gray" />
+
+              <i
+                class="bx bx-search-alt-2 absolute left-2 top-1/2 -translate-y-1/2 text-lg"></i>
+            </div>
+          </div>
+
+          <div class="space-y-2 sm:basis-52">
+            <label for="sort" class="text-m font-semibold">Sort by</label>
+
+            <select
+              id="sort"
+              class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray">
+              <option value="ending">Ending Soon</option>
+              <option value="latest">Latest Added</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark-gray text-white">
+      <div
+        class="container flex flex-col items-center justify-between gap-6 py-6 md:flex-row">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/assets/logo.svg" alt="BidPoint logo" />
+          <span class="font-poppins text-lg font-semibold">BidPoint</span>
+        </a>
+
+        <ul class="flex gap-6 text-2xl md:order-last">
+          <li>
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-facebook-square"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Pinterest"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-pinterest"></i>
+            </a>
+          </li>
+        </ul>
+
+        <p class="text-center">&copy; 2024 BidPoint. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore BidPoint profiles, view auctions, bidding activity, and more." />
+    <title>BidPoint - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Manrope:wght@400;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="/src/css/index.css" />
+  </head>
+  <body class="grid min-h-screen grid-rows-layout">
+    <header class="bg-dark-gray text-white">
+      <div class="container flex h-[76px] items-center justify-between">
+        <div class="flex items-center gap-4">
+          <button
+            id="nav-btn"
+            class="text-2xl md:hidden"
+            aria-expanded="false"
+            aria-label="Menu">
+            <i class="bx bx-menu"></i>
+          </button>
+
+          <a href="/" class="flex items-center gap-2">
+            <img src="/assets/logo.svg" alt="BidPoint logo" />
+            <span class="font-poppins text-lg font-semibold">BidPoint</span>
+          </a>
+        </div>
+
+        <nav
+          class="absolute left-0 top-[76px] hidden w-full bg-dark-gray md:static md:block md:w-auto">
+          <ul
+            class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
+            <li>
+              <a href="/" class="transition-colors hover:text-light-orange">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/auctions/"
+                class="transition-colors hover:text-light-orange">
+                Auctions
+              </a>
+            </li>
+
+            <li>
+              <button class="transition-colors hover:text-light-orange">
+                Sell an Item
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="rounded-md border border-light-orange px-6 py-1.5 font-semibold transition-colors hover:border-white">
+          Login
+        </button>
+      </div>
+    </header>
+
+    <main class="container py-20">
+      <section class="mb-8 flex flex-wrap items-center gap-6">
+        <div class="relative">
+          <img
+            src="/assets/default-avatar.jpg"
+            alt="Avatar for JohnDoe"
+            class="size-28 rounded-full object-cover" />
+
+          <button
+            aria-label="Change avatar"
+            class="absolute bottom-0 right-0 grid place-items-center rounded-full bg-white p-1 shadow-custom">
+            <i class="bx bx-cog text-xl"></i>
+          </button>
+        </div>
+
+        <div>
+          <h1 class="text-2xl font-bold">JohnDoe</h1>
+
+          <span>Credits:</span>
+          <span class="font-bold">1000</span>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="mb-6 text-xl font-bold">Auctions</h2>
+
+        <div class="flex gap-6 border-b border-dark-gray pb-2 sm:gap-11">
+          <button
+            data-selected="true"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Active</span>
+            <span>(4)</span>
+          </button>
+
+          <button
+            data-selected="false"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Ended</span>
+            <span>(2)</span>
+          </button>
+
+          <button
+            data-selected="false"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Won</span>
+            <span>(1)</span>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-xl font-bold capitalize">Bid history</h2>
+
+        <table class="w-full border-collapse md:table-fixed">
+          <thead>
+            <tr class="text-left">
+              <th class="p-4 text-lg">Auction</th>
+              <th class="p-4 text-lg">Bid</th>
+              <th class="hidden p-4 text-lg md:table-cell">Ends</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=1"
+                  class="font-semibold capitalize">
+                  Elegant beige sofa
+                </a>
+              </td>
+
+              <td class="p-4">500 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-22T16:03">August 22, 2024 16:03</time>
+              </td>
+            </tr>
+
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=2"
+                  class="font-semibold capitalize">
+                  Brown violin
+                </a>
+              </td>
+
+              <td class="p-4">80 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-24T21:15">August 24, 2024 21:15</time>
+              </td>
+            </tr>
+
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=3"
+                  class="font-semibold capitalize">
+                  Gold casio watch
+                </a>
+              </td>
+              <td class="p-4">200 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-22T18:23">August 22, 2024 18:23</time>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="bg-dark-gray text-white">
+      <div
+        class="container flex flex-col items-center justify-between gap-6 py-6 md:flex-row">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/assets/logo.svg" alt="BidPoint logo" />
+          <span class="font-poppins text-lg font-semibold">BidPoint</span>
+        </a>
+
+        <ul class="flex gap-6 text-2xl md:order-last">
+          <li>
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-facebook-square"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              aria-label="Pinterest"
+              class="transition-colors hover:text-light-orange">
+              <i class="bx bxl-pinterest"></i>
+            </a>
+          </li>
+        </ul>
+
+        <p class="text-center">&copy; 2024 BidPoint. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
