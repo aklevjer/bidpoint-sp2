@@ -45,6 +45,9 @@ module.exports = {
       backgroundImage: {
         "banner-bg": "url('/assets/banner-background.jpg')",
       },
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
     },
   },
   plugins: [],
