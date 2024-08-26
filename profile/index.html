@@ -68,7 +68,119 @@
       </div>
     </header>
 
-    <main></main>
+    <main class="container py-20">
+      <section class="mb-8 flex flex-wrap items-center gap-6">
+        <div class="relative">
+          <img
+            src="/assets/default-avatar.jpg"
+            alt="Avatar for JohnDoe"
+            class="size-28 rounded-full object-cover" />
+
+          <button
+            aria-label="Change avatar"
+            class="absolute bottom-0 right-0 grid place-items-center rounded-full bg-white p-1 shadow-custom">
+            <i class="bx bx-cog text-xl"></i>
+          </button>
+        </div>
+
+        <div>
+          <h1 class="text-2xl font-bold">JohnDoe</h1>
+
+          <span>Credits:</span>
+          <span class="font-bold">1000</span>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="mb-6 text-xl font-bold">Auctions</h2>
+
+        <div class="flex gap-6 border-b border-dark-gray pb-2 sm:gap-11">
+          <button
+            data-selected="true"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Active</span>
+            <span>(4)</span>
+          </button>
+
+          <button
+            data-selected="false"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Ended</span>
+            <span>(2)</span>
+          </button>
+
+          <button
+            data-selected="false"
+            class="relative font-semibold after:-bottom-[10px] after:left-0 after:h-[3px] after:w-full after:bg-dark-orange data-[selected='true']:after:absolute">
+            <span>Won</span>
+            <span>(1)</span>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="mb-2 text-xl font-bold capitalize">Bid history</h2>
+
+        <table class="w-full border-collapse md:table-fixed">
+          <thead>
+            <tr class="text-left">
+              <th class="p-4 text-lg">Auction</th>
+              <th class="p-4 text-lg">Bid</th>
+              <th class="hidden p-4 text-lg md:table-cell">Ends</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=1"
+                  class="font-semibold capitalize">
+                  Elegant beige sofa
+                </a>
+              </td>
+
+              <td class="p-4">500 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-22T16:03">August 22, 2024 16:03</time>
+              </td>
+            </tr>
+
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=2"
+                  class="font-semibold capitalize">
+                  Brown violin
+                </a>
+              </td>
+
+              <td class="p-4">80 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-24T21:15">August 24, 2024 21:15</time>
+              </td>
+            </tr>
+
+            <tr class="odd:border-y odd:border-gray odd:bg-light-gray">
+              <td class="p-4">
+                <a
+                  href="/auctions/listing/?id=3"
+                  class="font-semibold capitalize">
+                  Gold casio watch
+                </a>
+              </td>
+              <td class="p-4">200 credits</td>
+
+              <td class="hidden p-4 md:table-cell">
+                <time datetime="2024-08-22T18:23">August 22, 2024 18:23</time>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
 
     <footer class="bg-dark-gray text-white">
       <div
