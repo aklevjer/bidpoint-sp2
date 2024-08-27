@@ -1,5 +1,5 @@
 import router from "./router/index.mjs";
-import { setNavListener } from "./handlers/ui/index.mjs";
+import { setupHeader } from "./handlers/ui/header/index.mjs";
 
-setNavListener();
+setupHeader();
 router();

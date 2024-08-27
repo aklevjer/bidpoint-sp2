@@ -1,4 +1,4 @@
-function toggleNav(event) {
+export function toggleNav(event) {
   const navBtn = event.currentTarget;
   const menuIcon = navBtn.firstElementChild;
   const nav = document.querySelector("#nav");
@@ -9,12 +9,4 @@ function toggleNav(event) {
   menuIcon.classList.toggle("bx-menu", isExpanded);
   menuIcon.classList.toggle("bx-x", !isExpanded);
   nav.classList.toggle("hidden", isExpanded);
-}
-
-export function setNavListener() {
-  const navBtn = document.querySelector("#nav-btn");
-
-  if (navBtn) {
-    navBtn.addEventListener("click", toggleNav);
-  }
 }
