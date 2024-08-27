@@ -20,7 +20,8 @@
   </head>
   <body class="grid min-h-screen grid-rows-layout">
     <header class="bg-dark-gray text-white">
-      <div class="container flex h-[76px] items-center justify-between">
+      <div
+        class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
         <div class="flex items-center gap-4">
           <button
             id="nav-btn"
@@ -38,7 +39,7 @@
 
         <nav
           id="nav"
-          class="absolute left-0 top-[76px] z-10 hidden w-full bg-dark-gray md:static md:block md:w-auto">
+          class="absolute left-0 top-[76px] z-10 hidden w-full justify-self-center bg-dark-gray md:static md:block md:w-auto">
           <ul
             class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
             <li>
@@ -57,7 +58,7 @@
 
             <li>
               <button class="transition-colors hover:text-light-orange">
-                Sell an Item
+                Sell
               </button>
             </li>
           </ul>
@@ -65,8 +66,14 @@
 
         <button
           id="login-btn"
-          class="rounded-md border border-light-orange px-6 py-1.5 font-semibold transition-colors hover:border-white">
+          class="hidden justify-self-end rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
           Login
+        </button>
+
+        <button
+          id="logout-btn"
+          class="hidden justify-self-end rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
+          Logout
         </button>
       </div>
     </header>
