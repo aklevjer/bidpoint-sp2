@@ -24,11 +24,10 @@
         class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
         <div class="flex items-center gap-4">
           <button
-            id="nav-btn"
-            class="text-2xl md:hidden"
+            class="nav-btn text-2xl md:hidden"
             aria-expanded="false"
             aria-label="Menu">
-            <i class="bx bx-menu"></i>
+            <i class="nav-icon bx bx-menu"></i>
           </button>
 
           <a href="/" class="flex items-center gap-2">
@@ -38,8 +37,7 @@
         </div>
 
         <nav
-          id="nav"
-          class="absolute left-0 top-[76px] z-10 hidden w-full justify-self-center bg-dark-gray md:static md:block md:w-auto">
+          class="nav absolute left-0 top-[76px] z-10 hidden w-full justify-self-center bg-dark-gray md:static md:block md:w-auto">
           <ul
             class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
             <li>
@@ -64,17 +62,7 @@
           </ul>
         </nav>
 
-        <button
-          id="login-btn"
-          class="hidden justify-self-end rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
-          Login
-        </button>
-
-        <button
-          id="logout-btn"
-          class="hidden justify-self-end rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
-          Logout
-        </button>
+        <div class="user-container relative justify-self-end"></div>
       </div>
     </header>
 
@@ -167,14 +155,12 @@
     <!-- Templates -->
     <div class="hidden">
       <template id="modal-template">
-        <dialog id="modal" class="w-full bg-transparent backdrop:bg-black/70">
+        <dialog class="modal w-full bg-transparent backdrop:bg-black/70">
           <section
-            id="modal-container"
-            class="relative mx-4 rounded-md bg-white px-4 py-8 sm:px-10">
+            class="modal-container relative mx-4 rounded-md bg-white px-4 py-8 sm:px-10">
             <button
-              id="modal-close-btn"
               aria-label="Close modal"
-              class="absolute right-4 top-4 grid place-items-center text-3xl">
+              class="modal-close-btn absolute right-4 top-4 grid place-items-center text-3xl">
               <i class="bx bx-x"></i>
             </button>
           </section>
@@ -216,8 +202,7 @@
               Don't have an account?
               <button
                 type="button"
-                id="goto-register-btn"
-                class="font-semibold capitalize underline underline-offset-4">
+                class="goto-register-btn font-semibold capitalize underline underline-offset-4">
                 Register now
               </button>
             </p>
@@ -270,8 +255,7 @@
               Already have an account?
               <button
                 type="button"
-                id="goto-login-btn"
-                class="font-semibold capitalize underline underline-offset-4">
+                class="goto-login-btn font-semibold capitalize underline underline-offset-4">
                 Login
               </button>
             </p>
@@ -284,6 +268,52 @@
           class="input-error flex items-center gap-1 text-m font-semibold text-red">
           <i class="bx bx-error-circle text-lg"></i>
           <p class="input-error-msg leading-none"></p>
+        </div>
+      </template>
+
+      <template id="login-btn-template">
+        <button
+          class="login-btn rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
+          Login
+        </button>
+      </template>
+
+      <template id="user-menu-template">
+        <button
+          aria-expanded="false"
+          class="user-menu-btn group flex items-center md:gap-2">
+          <img
+            src=""
+            alt=""
+            class="user-menu-avatar size-10 rounded-full object-cover" />
+
+          <div class="hidden md:flex md:flex-col md:items-start">
+            <span class="user-menu-name max-w-36 truncate font-semibold"></span>
+            <span class="user-menu-credits text-sm text-gray"></span>
+          </div>
+
+          <i
+            class="user-menu-icon bx bx-chevron-down text-2xl transition-colors group-hover:text-light-orange"></i>
+        </button>
+
+        <div
+          class="user-menu absolute right-0 top-12 hidden w-52 rounded-md border border-mid-gray bg-dark-gray">
+          <ul class="text-m font-semibold">
+            <li>
+              <a
+                href="/profile/"
+                class="block w-full rounded-t-md p-2.5 text-left transition-colors hover:bg-mid-gray">
+                Profile
+              </a>
+            </li>
+
+            <li>
+              <button
+                class="logout-btn block w-full rounded-b-md p-2.5 text-left transition-colors hover:bg-mid-gray">
+                Logout
+              </button>
+            </li>
+          </ul>
         </div>
       </template>
     </div>

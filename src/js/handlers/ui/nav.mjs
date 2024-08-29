@@ -1,12 +1,12 @@
-export function toggleNav(event) {
-  const navBtn = event.currentTarget;
-  const menuIcon = navBtn.firstElementChild;
-  const nav = document.querySelector("#nav");
-  const isExpanded = navBtn.getAttribute("aria-expanded") === "true";
+export function toggleNav() {
+  const nav = document.querySelector(".nav");
+  const navBtn = document.querySelector(".nav-btn");
+  const navIcon = document.querySelector(".nav-icon");
+  const isNavOpen = navBtn.getAttribute("aria-expanded") === "true";
 
-  navBtn.setAttribute("aria-expanded", !isExpanded);
+  navBtn.setAttribute("aria-expanded", !isNavOpen);
 
-  menuIcon.classList.toggle("bx-menu", isExpanded);
-  menuIcon.classList.toggle("bx-x", !isExpanded);
-  nav.classList.toggle("hidden", isExpanded);
+  navIcon.classList.toggle("bx-menu", isNavOpen);
+  navIcon.classList.toggle("bx-x", !isNavOpen);
+  nav.classList.toggle("hidden", isNavOpen);
 }
