@@ -8,13 +8,13 @@ import {
 
 export function setupModal(modal, modalType) {
   const modalForm = modal.querySelector("form");
-  const modalCloseBtn = modal.querySelector("#modal-close-btn");
+  const modalCloseBtn = modal.querySelector(".modal-close-btn");
 
   switch (modalType) {
     case "login": {
       modalForm.addEventListener("submit", handleLogin);
 
-      const gotoRegisterBtn = modal.querySelector("#goto-register-btn");
+      const gotoRegisterBtn = modal.querySelector(".goto-register-btn");
       gotoRegisterBtn.addEventListener("click", () => swapModal("register"));
       break;
     }
@@ -22,7 +22,7 @@ export function setupModal(modal, modalType) {
     case "register": {
       modalForm.addEventListener("submit", handleRegister);
 
-      const gotoLoginBtn = modal.querySelector("#goto-login-btn");
+      const gotoLoginBtn = modal.querySelector(".goto-login-btn");
       gotoLoginBtn.addEventListener("click", () => swapModal("login"));
       break;
     }

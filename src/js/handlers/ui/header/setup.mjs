@@ -4,9 +4,9 @@ import { handleLogout } from "../../auth/index.mjs";
 import { updateHeader } from "./index.mjs";
 
 export function setupHeader() {
-  const navBtn = document.querySelector("#nav-btn");
-  const loginBtn = document.querySelector("#login-btn");
-  const logoutBtn = document.querySelector("#logout-btn");
+  const navBtn = document.querySelector(".nav-btn");
+  const loginBtn = document.querySelector(".login-btn");
+  const logoutBtn = document.querySelector(".logout-btn");
 
   if (navBtn) {
     navBtn.addEventListener("click", toggleNav);

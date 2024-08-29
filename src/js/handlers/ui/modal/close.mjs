@@ -1,5 +1,5 @@
 export function closeModal() {
-  const modal = document.querySelector("#modal");
+  const modal = document.querySelector(".modal");
 
   if (modal) {
     modal.remove();
@@ -10,7 +10,7 @@ export function closeModal() {
 }
 
 export function closeModalOutside(event) {
-  if (event.target.id === "modal") {
+  if (event.target.classList.contains("modal")) {
     closeModal();
   }
 }

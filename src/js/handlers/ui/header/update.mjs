@@ -1,8 +1,8 @@
 import { isLoggedIn } from "../../../utils/misc/index.mjs";
 
 export function updateHeader() {
-  const loginBtn = document.querySelector("#login-btn");
-  const logoutBtn = document.querySelector("#logout-btn");
+  const loginBtn = document.querySelector(".login-btn");
+  const logoutBtn = document.querySelector(".logout-btn");
 
   const isUserLoggedIn = isLoggedIn();
 
