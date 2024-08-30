@@ -68,9 +68,9 @@
 
     <main class="container py-20">
       <section>
-        <h1 class="text-2xl font-bold">Listings</h1>
+        <h1 class="mb-6 text-2xl font-bold">Listings</h1>
 
-        <div class="my-6 flex flex-col justify-between gap-4 sm:flex-row">
+        <div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row">
           <div class="space-y-2 sm:basis-52">
             <label for="search" class="text-m font-semibold">
               Search for listings
@@ -98,6 +98,16 @@
               <option value="latest">Latest Added</option>
             </select>
           </div>
+        </div>
+
+        <ul
+          class="listings-container overflow-wrap-anywhere grid grid-cols-autofill-220 gap-x-6 gap-y-8"></ul>
+
+        <div class="mt-8 flex justify-center">
+          <button
+            class="show-more-btn hidden rounded-md bg-dark-orange px-4 py-2 font-semibold capitalize text-white transition-colors hover:bg-dark-gray">
+            Show more
+          </button>
         </div>
       </section>
     </main>
