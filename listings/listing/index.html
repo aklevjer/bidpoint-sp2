@@ -425,6 +425,37 @@
           </ul>
         </div>
       </template>
+
+      <template id="listing-card-template">
+        <li class="group rounded-md shadow-custom">
+          <a href="" class="listing-card-link rounded-md">
+            <div class="relative overflow-hidden rounded-t-md">
+              <img
+                src=""
+                alt=""
+                class="listing-card-image aspect-3/2 object-cover transition-transform duration-300 group-hover:scale-110" />
+
+              <div
+                class="absolute left-0 top-0 flex items-center gap-1 rounded-br-md bg-dark-gray p-2 text-white">
+                <i class="bx bx-time text-lg"></i>
+                <span class="listing-card-timeleft text-m font-medium"></span>
+              </div>
+            </div>
+
+            <div class="space-y-4 p-4">
+              <h2
+                class="listing-card-h2 text-lg font-bold capitalize leading-tight underline-offset-4 group-hover:underline"></h2>
+              <h3
+                class="listing-card-h3 text-lg font-bold capitalize leading-tight underline-offset-4 group-hover:underline"></h3>
+
+              <div class="flex flex-col">
+                <span class="listing-card-bid-label text-sm"></span>
+                <span class="listing-card-bid font-bold"></span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </template>
     </div>
   </body>
 </html>
