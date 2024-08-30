@@ -43,6 +43,9 @@ module.exports = {
       gridTemplateRows: {
         layout: "auto 1fr auto",
       },
+      gridTemplateColumns: {
+        "autofill-220": "repeat(auto-fill, minmax(min(220px, 100%), 1fr))",
+      },
       backgroundImage: {
         "banner-bg": "url('/assets/banner-background.jpg')",
       },

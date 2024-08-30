@@ -1,3 +1,11 @@
+import { getListings } from "../api/listings/index.mjs";
+import { ListingsHandler } from "../handlers/listings/index.mjs";
+import { setRegisterListener } from "../handlers/auth/index.mjs";
+
 export function homePage() {
-  // Logic for home page
+  const endingSoonContainer = document.querySelector(".ending-soon-container");
+  const endingSoonHandler = new ListingsHandler(endingSoonContainer);
+  endingSoonHandler.setCallback(getListings);
+
+  setRegisterListener();
 }

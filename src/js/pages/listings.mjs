@@ -1,3 +1,15 @@
+import { getListings } from "../api/listings/index.mjs";
+import {
+  ListingsHandler,
+  setSearchListener,
+  setSortListener,
+} from "../handlers/listings/index.mjs";
+
 export function listingsPage() {
-  // Logic for listings page
+  const listingsContainer = document.querySelector(".listings-container");
+  const listingsHandler = new ListingsHandler(listingsContainer, 12, true);
+  listingsHandler.setCallback(getListings);
+
+  setSearchListener(listingsHandler);
+  setSortListener(listingsHandler);
 }
