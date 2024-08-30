@@ -1,6 +1,6 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
-export function createModalTemplate(modalType) {
+export function createModal(modalType) {
   const modalClone = getTemplateClone("modal");
   const modal = modalClone.querySelector(".modal");
   const modalContainer = modalClone.querySelector(".modal-container");

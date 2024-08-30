@@ -1,8 +1,8 @@
-import { createModalTemplate } from "../../../templates/ui/index.mjs";
+import { createModal } from "../../../templates/ui/index.mjs";
 import { setupModal } from "./index.mjs";
 
 export function openModal(modalType) {
-  const { modalClone, modal } = createModalTemplate(modalType);
+  const { modalClone, modal } = createModal(modalType);
 
   setupModal(modal, modalType);
 

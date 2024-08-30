@@ -1,4 +1,4 @@
-import { createInputErrorTemplate } from "../../templates/ui/index.mjs";
+import { createInputError } from "../../templates/ui/index.mjs";
 
 export function toggleInputError(inputElement, errorMsg, shouldShow) {
   const inputContainer = inputElement.parentElement;
@@ -9,7 +9,7 @@ export function toggleInputError(inputElement, errorMsg, shouldShow) {
       prevInputError.remove();
     }
   } else if (!prevInputError) {
-    const inputErrorClone = createInputErrorTemplate(errorMsg);
+    const inputErrorClone = createInputError(errorMsg);
     inputContainer.appendChild(inputErrorClone);
   }
 

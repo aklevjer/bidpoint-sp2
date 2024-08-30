@@ -1,6 +1,6 @@
 import * as storage from "../../../utils/storage/index.mjs";
 import { getProfileByName } from "../../../api/profiles/index.mjs";
-import { createUserMenuTemplate } from "../../../templates/ui/index.mjs";
+import { createUserMenu } from "../../../templates/ui/index.mjs";
 import { toggleUserMenu } from "../index.mjs";
 import { handleLogout } from "../../auth/index.mjs";
 
@@ -9,7 +9,7 @@ export async function setupLoggedInHeader(container) {
 
   try {
     const profileData = await getProfileByName(name);
-    const { userMenuClone, userMenuBtn, logoutBtn } = createUserMenuTemplate(
+    const { userMenuClone, userMenuBtn, logoutBtn } = createUserMenu(
       profileData.data,
     );
 
