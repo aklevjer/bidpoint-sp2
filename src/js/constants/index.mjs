@@ -18,5 +18,5 @@ export const API_LISTINGS_URL = API_BASE + API_AUCTION + API_LISTINGS;
 export const API_PROFILES_URL = API_BASE + API_AUCTION + API_PROFILES;
 
 // Default image urls
-export const DEFAULT_AVATAR_URL = "/assets/default-avatar.jpg";
-export const DEFAULT_AUCTION_URL = "/assets/default-auction.jpg";
+export const DEFAULT_AVATAR_IMG = "/assets/default-avatar.jpg";
+export const DEFAULT_LISTING_IMG = "/assets/default-listing.jpg";

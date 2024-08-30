@@ -1,6 +1,6 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
-export function createInputErrorTemplate(errorMsg) {
+export function createInputError(errorMsg) {
   const inputErrorClone = getTemplateClone("input-error");
   const inputErrorMsg = inputErrorClone.querySelector(".input-error-msg");
 
