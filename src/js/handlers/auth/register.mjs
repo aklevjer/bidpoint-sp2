@@ -1,6 +1,6 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { register, login } from "../../api/auth/index.mjs";
-import { closeModal } from "../ui/modal/index.mjs";
+import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { updateHeader } from "../ui/index.mjs";
 
 export async function handleRegister(event) {
@@ -24,5 +24,13 @@ export async function handleRegister(event) {
     updateHeader();
   } catch (error) {
     console.error(error);
+  }
+}
+
+export function setRegisterListener() {
+  const registerBtn = document.querySelector(".register-btn");
+
+  if (registerBtn) {
+    registerBtn.addEventListener("click", () => openModal("register"));
   }
 }
