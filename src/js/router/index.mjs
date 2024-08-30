@@ -11,16 +11,16 @@ export default function router() {
       pages.homePage();
       break;
 
-    case "/auctions":
-    case "/auctions/":
-    case "/auctions/index.html":
-      pages.auctionsPage();
+    case "/listings":
+    case "/listings/":
+    case "/listings/index.html":
+      pages.listingsPage();
       break;
 
-    case "/auctions/listing":
-    case "/auctions/listing/":
-    case "/auctions/listing/index.html":
-      pages.listingPage(params);
+    case "/listings/listing":
+    case "/listings/listing/":
+    case "/listings/listing/index.html":
+      pages.singleListingPage(params);
       break;
 
     case "/profile":

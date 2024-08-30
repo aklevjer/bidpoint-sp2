@@ -2,8 +2,8 @@
 module.exports = {
   content: [
     "./index.html",
-    "./auctions/*.html",
-    "./auctions/listing/*.html",
+    "./listings/*.html",
+    "./listings/listing/*.html",
     "./profile/*.html",
     "./src/js/**/*.mjs",
   ],
