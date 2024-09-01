@@ -1,5 +1,9 @@
 import { handleLogin, handleRegister } from "../../auth/index.mjs";
 import {
+  handleCreateListing,
+  handleAddThumbnail,
+} from "../../listings/index.mjs";
+import {
   swapModal,
   closeModal,
   closeModalOutside,
@@ -12,18 +16,28 @@ export function setupModal(modal, modalType) {
 
   switch (modalType) {
     case "login": {
-      modalForm.addEventListener("submit", handleLogin);
-
       const gotoRegisterBtn = modal.querySelector(".goto-register-btn");
+
       gotoRegisterBtn.addEventListener("click", () => swapModal("register"));
+      modalForm.addEventListener("submit", handleLogin);
       break;
     }
 
     case "register": {
-      modalForm.addEventListener("submit", handleRegister);
-
       const gotoLoginBtn = modal.querySelector(".goto-login-btn");
+
       gotoLoginBtn.addEventListener("click", () => swapModal("login"));
+      modalForm.addEventListener("submit", handleRegister);
+      break;
+    }
+
+    case "listing": {
+      const addBtn = modal.querySelector(".add-btn");
+      const cancelBtn = modal.querySelector(".cancel-btn");
+
+      addBtn.addEventListener("click", handleAddThumbnail);
+      cancelBtn.addEventListener("click", closeModal);
+      modalForm.addEventListener("submit", handleCreateListing);
       break;
     }
   }

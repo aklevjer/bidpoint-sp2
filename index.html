@@ -55,7 +55,8 @@
             </li>
 
             <li>
-              <button class="transition-colors hover:text-light-orange">
+              <button
+                class="create-listing-btn transition-colors hover:text-light-orange">
                 Sell
               </button>
             </li>
@@ -238,7 +239,7 @@
         <h2 class="mb-6 text-xl font-bold capitalize">Login</h2>
 
         <form class="space-y-6">
-          <div class="space-y-2">
+          <div class="input-container space-y-2">
             <label for="email" class="text-m font-semibold">Email</label>
             <input
               type="email"
@@ -248,7 +249,7 @@
               class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
           </div>
 
-          <div class="space-y-2">
+          <div class="input-container space-y-2">
             <label for="password" class="text-m font-semibold">Password</label>
             <input
               type="password"
@@ -281,7 +282,7 @@
         <h2 class="mb-6 text-xl font-bold capitalize">Register</h2>
 
         <form class="space-y-6">
-          <div class="space-y-2">
+          <div class="input-container space-y-2">
             <label for="name" class="text-m font-semibold">Username</label>
             <input
               type="text"
@@ -291,7 +292,7 @@
               class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
           </div>
 
-          <div class="space-y-2">
+          <div class="input-container space-y-2">
             <label for="email" class="text-m font-semibold">Email</label>
             <input
               type="email"
@@ -301,7 +302,7 @@
               class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
           </div>
 
-          <div class="space-y-2">
+          <div class="input-container space-y-2">
             <label for="password" class="text-m font-semibold">Password</label>
             <input
               type="password"
@@ -328,6 +329,99 @@
             </p>
           </div>
         </form>
+      </template>
+
+      <template id="listing-form-template">
+        <h2 class="mb-6 text-xl font-bold capitalize">Create listing</h2>
+
+        <form class="space-y-6">
+          <div class="flex flex-col gap-6 sm:flex-row sm:gap-4">
+            <div class="input-container flex-1 space-y-2">
+              <label for="title" class="text-m font-semibold">Title</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title"
+                class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
+            </div>
+
+            <div class="input-container flex-1 space-y-2">
+              <label for="endsAt" class="text-m font-semibold">
+                End date and time
+              </label>
+              <input
+                type="datetime-local"
+                id="endsAt"
+                name="endsAt"
+                class="w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
+            </div>
+          </div>
+
+          <div class="input-container space-y-2">
+            <label for="description" class="text-m font-semibold">
+              Description <span class="text-sm text-mid-gray">(optional)</span>
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Write your description here.."
+              class="min-h-32 w-full resize-none rounded-md border border-dark-gray p-2 align-top outline-none focus:ring-1 focus:ring-dark-gray"></textarea>
+          </div>
+
+          <div class="input-container space-y-2">
+            <label for="imageUrl" class="text-m font-semibold">
+              Image URL <span class="text-sm text-mid-gray">(optional)</span>
+            </label>
+            <div class="flex gap-2">
+              <input
+                type="url"
+                id="imageUrl"
+                name="imageUrl"
+                placeholder="https://www.example.com/image.jpg"
+                class="image-url w-full rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
+
+              <button
+                type="button"
+                aria-label="Add image"
+                class="add-btn rounded-md border border-dark-gray px-4 py-2 font-semibold transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="thumbnail-container flex-wrap gap-4 has-[img]:flex"></div>
+
+          <div class="flex justify-end gap-4">
+            <button
+              type="button"
+              class="cancel-btn rounded-md border border-dark-gray px-4 py-2 font-semibold transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
+              Cancel
+            </button>
+
+            <button
+              type="submit"
+              class="rounded-md bg-dark-orange px-4 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
+              Create
+            </button>
+          </div>
+        </form>
+      </template>
+
+      <template id="thumbnail-template">
+        <div class="relative">
+          <img
+            src=""
+            alt=""
+            class="thumbnail-img size-24 rounded-md object-cover" />
+
+          <button
+            type="button"
+            aria-label="Remove image"
+            class="thumbnail-remove-btn absolute right-1 top-1 grid size-8 place-items-center rounded-full bg-dark-gray text-white">
+            <i class="bx bx-x text-xl"></i>
+          </button>
+        </div>
       </template>
 
       <template id="input-error-template">

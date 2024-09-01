@@ -1,7 +1,7 @@
 import { createInputError } from "../../templates/ui/index.mjs";
 
 export function toggleInputError(inputElement, errorMsg, shouldShow) {
-  const inputContainer = inputElement.parentElement;
+  const inputContainer = inputElement.closest(".input-container");
   const prevInputError = inputContainer.querySelector(".input-error");
 
   if (!shouldShow) {
