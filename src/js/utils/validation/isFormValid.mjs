@@ -1,7 +1,7 @@
 import { validateInput } from "./index.mjs";
 
 export function isFormValid(form) {
-  const inputElements = form.querySelectorAll("input", "textarea");
+  const inputElements = form.querySelectorAll("input, textarea");
   let allInputsValid = true;
 
   inputElements.forEach((inputElement) => {
