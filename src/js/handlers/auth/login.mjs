@@ -8,9 +8,7 @@ export async function handleLogin(event) {
 
   const loginForm = event.target;
 
-  if (!isFormValid(loginForm)) {
-    return;
-  }
+  if (!isFormValid(loginForm)) return;
 
   const formData = new FormData(loginForm);
   const account = Object.fromEntries(formData.entries());
