@@ -14,7 +14,7 @@ export function validateInput(inputElement) {
 
   switch (name) {
     case "name":
-      isValid = isUsernameValid(value);
+      isValid = isUsernameValid(value) && isLengthValid(value, 1, 20);
       message = "Use only letters, numbers, and _ (max 20 chars)";
       break;
 
