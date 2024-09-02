@@ -9,9 +9,7 @@ export async function handleCreateListing(event) {
 
   const createListingForm = event.target;
 
-  if (!isFormValid(createListingForm)) {
-    return;
-  }
+  if (!isFormValid(createListingForm)) return;
 
   const formData = new FormData(createListingForm);
 

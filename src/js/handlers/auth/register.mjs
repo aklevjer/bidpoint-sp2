@@ -8,9 +8,7 @@ export async function handleRegister(event) {
 
   const registerForm = event.target;
 
-  if (!isFormValid(registerForm)) {
-    return;
-  }
+  if (!isFormValid(registerForm)) return;
 
   const formData = new FormData(registerForm);
   const account = Object.fromEntries(formData.entries());
