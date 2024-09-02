@@ -11,6 +11,10 @@ export function getTimeLeft(dateString, showMinutes) {
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
+  if (days === 0 && hours === 0 && mins > 0) {
+    return `${mins}m`;
+  }
+
   const timeLeft = [];
   if (days > 0) timeLeft.push(`${days}d`);
   if (hours > 0) timeLeft.push(`${hours}h`);
