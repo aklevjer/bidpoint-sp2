@@ -1,6 +1,6 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { login } from "../../api/auth/index.mjs";
-import { closeModal } from "../ui/modal/index.mjs";
+import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { updateHeader } from "../ui/index.mjs";
 
 export async function handleLogin(event) {
@@ -19,5 +19,13 @@ export async function handleLogin(event) {
     updateHeader();
   } catch (error) {
     console.error(error);
+  }
+}
+
+export function setLoginListener() {
+  const loginBtn = document.querySelector(".auth-login-btn");
+
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => openModal("login"));
   }
 }
