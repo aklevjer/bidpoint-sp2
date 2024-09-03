@@ -1,5 +1,4 @@
 import * as storage from "../../../utils/storage/index.mjs";
-import { hideElement } from "../../../utils/html/index.mjs";
 
 export function updateListingBidForm(listingClone, listingData) {
   const bidForm = listingClone.querySelector(".bid-form");
@@ -15,15 +14,15 @@ export function updateListingBidForm(listingClone, listingData) {
   const isUserLoggedIn = Boolean(username);
 
   if (hasEnded) {
-    hideElement(bidForm);
+    bidForm.remove();
     bidFormLabel.textContent =
       "This listing has ended, bidding is no longer available.";
   } else if (isUserSeller) {
-    hideElement(bidForm);
+    bidForm.remove();
     bidFormLabel.textContent = "You cannot bid on your own listing.";
   } else if (isUserLoggedIn) {
-    hideElement(bidFormLabel);
+    bidFormLabel.remove();
   } else {
-    hideElement(bidForm);
+    bidForm.remove();
   }
 }
