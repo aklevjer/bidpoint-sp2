@@ -1,6 +1,6 @@
 import { createListing } from "../../api/listings/index.mjs";
 import { isFormValid } from "../../utils/validation/index.mjs";
-import { formatMedia } from "../../utils/listings/index.mjs";
+import { formatMedia } from "../../utils/format/index.mjs";
 import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 

@@ -67,150 +67,7 @@
       </div>
     </header>
 
-    <main class="container py-20">
-      <section class="space-y-8">
-        <button
-          class="flex items-center gap-2 rounded-md border border-dark-gray px-4 py-2 font-semibold capitalize transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
-          <i class="bx bx-arrow-back text-lg"></i>
-          <span>Go back</span>
-        </button>
-
-        <div class="grid gap-6 md:grid-cols-2">
-          <div class="relative">
-            <img
-              src="/assets/default-listing.jpg"
-              alt="Elegant Beige Sofa"
-              class="aspect-4/3 w-full rounded-md object-cover md:h-96" />
-
-            <button
-              aria-label="Previous image"
-              class="absolute left-4 top-1/2 grid h-11 w-10 -translate-y-1/2 place-items-center rounded-md bg-black/75 text-white">
-              <i class="bx bx-chevron-left text-4xl"></i>
-            </button>
-
-            <button
-              aria-label="Next image"
-              class="absolute right-4 top-1/2 grid h-11 w-10 -translate-y-1/2 place-items-center rounded-md bg-black/75 text-white">
-              <i class="bx bx-chevron-right text-4xl"></i>
-            </button>
-
-            <span
-              class="absolute bottom-4 left-1/2 grid h-8 w-10 -translate-x-1/2 place-items-center rounded-md bg-black/75 font-semibold text-white">
-              1/3
-            </span>
-          </div>
-
-          <div class="md:ml-6">
-            <h1
-              class="mb-4 border-b border-dark-gray pb-2 text-2xl font-bold capitalize">
-              Elegant beige sofa
-            </h1>
-
-            <p class="mb-6">
-              Elegant beige sofa in excellent condition, adding a touch of
-              sophistication to any living room. Comfortable and stylish.
-            </p>
-
-            <div class="space-x-1">
-              <span>Current bid:</span>
-              <span class="text-lg font-bold">500 credits</span>
-            </div>
-
-            <div class="mt-2 space-x-1">
-              <span>Ends in:</span>
-              <span class="font-bold text-green">1d 2h 14m</span>
-            </div>
-
-            <div class="mt-2 space-x-1">
-              <span>Created:</span>
-
-              <time datetime="2024-08-20" class="font-semibold">
-                August 20, 2024
-              </time>
-            </div>
-
-            <div class="mt-2 flex gap-1">
-              <span>Seller:</span>
-
-              <a
-                href="/profile/?user=FionaFurniture"
-                class="flex gap-1 font-semibold">
-                <img
-                  src="/assets/default-avatar.jpg"
-                  alt="Avatar for FionaFurniture"
-                  class="size-6 rounded-full" />
-
-                <span>FionaFurniture</span>
-              </a>
-            </div>
-
-            <div class="mt-6">
-              <form name="bid" class="hidden gap-2">
-                <label for="amount" class="sr-only">Place your bid</label>
-                <input
-                  type="number"
-                  name="amount"
-                  id="amount"
-                  placeholder="Place your bid"
-                  class="w-full max-w-40 rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
-
-                <button
-                  type="submit"
-                  class="rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
-                  Bid
-                </button>
-              </form>
-
-              <p>
-                You need to
-                <button class="font-semibold underline underline-offset-4">
-                  login
-                </button>
-                to bid on this listing.
-              </p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <h2 class="text-xl font-bold capitalize">Bid history</h2>
-
-            <ul>
-              <li
-                class="flex justify-between p-2 odd:border-y odd:border-gray odd:bg-light-gray">
-                <a href="/profile/?user=JohnDoe" class="font-semibold">
-                  JohnDoe
-                </a>
-
-                <span>500 credits</span>
-              </li>
-
-              <li
-                class="flex justify-between p-2 odd:border-y odd:border-gray odd:bg-light-gray">
-                <a href="/profile/?user=HomeDecorFan" class="font-semibold">
-                  HomeDecorFan
-                </a>
-
-                <span>450 credits</span>
-              </li>
-
-              <li
-                class="flex justify-between p-2 odd:border-y odd:border-gray odd:bg-light-gray">
-                <a href="/profile/?user=VintageHunter" class="font-semibold">
-                  VintageHunter
-                </a>
-
-                <span>400 credits</span>
-              </li>
-            </ul>
-
-            <button
-              class="mx-auto block rounded-md border border-dark-gray px-4 py-2 text-m font-semibold capitalize transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
-              Show all
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+    <main class="single-listing container py-20"></main>
 
     <footer class="bg-dark-gray text-white">
       <div
@@ -520,35 +377,123 @@
         </div>
       </template>
 
-      <template id="listing-card-template">
-        <li class="group rounded-md shadow-custom">
-          <a href="" class="listing-card-link rounded-md">
-            <div class="relative overflow-hidden rounded-t-md">
+      <template id="single-listing-template">
+        <section>
+          <button
+            class="go-back-btn mb-8 flex items-center gap-2 rounded-md border border-dark-gray px-4 py-2 font-semibold capitalize transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
+            <i class="bx bx-arrow-back text-lg"></i>
+            <span>Go back</span>
+          </button>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="relative">
               <img
                 src=""
                 alt=""
-                class="listing-card-image aspect-3/2 object-cover transition-transform duration-300 group-hover:scale-110" />
+                class="listing-image aspect-4/3 h-full w-full rounded-md object-cover" />
 
-              <div
-                class="absolute left-0 top-0 flex items-center gap-1 rounded-br-md bg-dark-gray p-2 text-white">
-                <i class="bx bx-time text-lg"></i>
-                <span class="listing-card-timeleft text-m font-medium"></span>
+              <button
+                aria-label="Previous image"
+                class="prev-btn absolute left-4 top-1/2 grid h-11 w-10 -translate-y-1/2 place-items-center rounded-md bg-dark-gray text-white">
+                <i class="bx bx-chevron-left text-4xl"></i>
+              </button>
+
+              <button
+                aria-label="Next image"
+                class="next-btn absolute right-4 top-1/2 grid h-11 w-10 -translate-y-1/2 place-items-center rounded-md bg-dark-gray text-white">
+                <i class="bx bx-chevron-right text-4xl"></i>
+              </button>
+
+              <span
+                class="current-img-label absolute bottom-4 left-1/2 grid h-8 w-10 -translate-x-1/2 place-items-center rounded-md bg-dark-gray font-semibold text-white">
+              </span>
+            </div>
+
+            <div class="overflow-wrap-anywhere md:ml-6">
+              <h1
+                class="listing-title mb-4 border-b border-dark-gray pb-2 text-2xl font-bold capitalize leading-tight"></h1>
+
+              <p class="listing-description mb-6"></p>
+
+              <div class="space-x-1">
+                <span class="listing-bid-label"></span>
+                <span class="listing-bid text-lg font-bold"></span>
+              </div>
+
+              <div class="mt-2 space-x-1">
+                <span>Ends in:</span>
+                <span class="listing-ends-in font-bold text-green"></span>
+              </div>
+
+              <div class="mt-2 space-x-1">
+                <span>Created:</span>
+
+                <time datetime="" class="listing-created font-semibold"></time>
+              </div>
+
+              <div class="mt-2 flex gap-1">
+                <span>Seller:</span>
+
+                <a href="" class="listing-seller-link flex gap-1 font-semibold">
+                  <img
+                    src=""
+                    alt=""
+                    class="listing-seller-avatar size-6 rounded-full" />
+
+                  <span class="listing-seller-name"></span>
+                </a>
+              </div>
+
+              <div class="mt-6">
+                <form class="bid-form">
+                  <label for="amount" class="sr-only">Place your bid</label>
+                  <div class="input-container flex gap-2">
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder="Place your bid"
+                      class="w-full max-w-40 rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
+
+                    <button
+                      type="submit"
+                      class="rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
+                      Bid
+                    </button>
+                  </div>
+                </form>
+
+                <p class="bid-form-label">
+                  You need to
+                  <button
+                    class="auth-login-btn font-semibold underline underline-offset-4">
+                    login
+                  </button>
+                  to bid on this listing.
+                </p>
               </div>
             </div>
 
-            <div class="space-y-4 p-4">
-              <h2
-                class="listing-card-h2 text-lg font-bold capitalize leading-tight underline-offset-4 group-hover:underline"></h2>
-              <h3
-                class="listing-card-h3 text-lg font-bold capitalize leading-tight underline-offset-4 group-hover:underline"></h3>
+            <div class="space-y-4">
+              <h2 class="text-xl font-bold capitalize">Bid history</h2>
 
-              <div class="flex flex-col">
-                <span class="listing-card-bid-label text-sm"></span>
-                <span class="listing-card-bid font-bold"></span>
-              </div>
+              <ul class="bids-list">
+                <li
+                  class="bid-item flex justify-between p-2 odd:border-y odd:border-gray odd:bg-light-gray">
+                  <a href="" class="bidder-name font-semibold"></a>
+                  <span class="bid-amount"></span>
+                </li>
+              </ul>
+
+              <p class="no-bids-label">No bids placed.</p>
+
+              <button
+                class="show-all-btn mx-auto block rounded-md border border-dark-gray px-4 py-2 text-m font-semibold capitalize transition-all hover:ring-1 hover:ring-inset hover:ring-dark-gray">
+                Show all
+              </button>
             </div>
-          </a>
-        </li>
+          </div>
+        </section>
       </template>
     </div>
   </body>
