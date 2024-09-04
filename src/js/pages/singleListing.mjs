@@ -1,9 +1,13 @@
 import { getListingById } from "../api/listings/index.mjs";
 import { renderSingleListing } from "../handlers/listings/index.mjs";
+import { clearElement } from "../utils/html/index.mjs";
 import { setPageTitle } from "../utils/misc/index.mjs";
 import { ImageGallery, setGoBackListener } from "../handlers/ui/index.mjs";
 import { setLoginListener } from "../handlers/auth/index.mjs";
-import { setShowAllListener } from "../handlers/bids/index.mjs";
+import {
+  setBidFormListener,
+  setShowAllListener,
+} from "../handlers/bids/index.mjs";
 
 export async function singleListingPage({ id }) {
   if (!id) {
@@ -17,6 +21,7 @@ export async function singleListingPage({ id }) {
     const { data } = await getListingById(id);
     const { title, media } = data;
 
+    clearElement(singleContainer);
     renderSingleListing(data, singleContainer);
     setPageTitle(title);
 
@@ -26,6 +31,7 @@ export async function singleListingPage({ id }) {
     }
 
     setLoginListener();
+    setBidFormListener(id);
     setShowAllListener();
     setGoBackListener();
   } catch (error) {
