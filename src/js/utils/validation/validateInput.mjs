@@ -4,6 +4,7 @@ import {
   isEmailValid,
   isLengthValid,
   isDateTimeValid,
+  isAmountValid,
 } from "./index.mjs";
 
 export function validateInput(inputElement) {
@@ -41,6 +42,11 @@ export function validateInput(inputElement) {
     case "description":
       isValid = isLengthValid(value, 0, 280);
       message = "Description cannot be more than 280 characters";
+      break;
+
+    case "amount":
+      isValid = isAmountValid(value);
+      message = "Please enter a number greater than 0";
       break;
 
     default:

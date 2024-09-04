@@ -445,21 +445,23 @@
               </div>
 
               <div class="mt-6">
-                <form class="bid-form">
+                <form name="bid" class="bid-form">
                   <label for="amount" class="sr-only">Place your bid</label>
-                  <div class="input-container flex gap-2">
-                    <input
-                      type="number"
-                      name="amount"
-                      id="amount"
-                      placeholder="Place your bid"
-                      class="w-full max-w-40 rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
+                  <div class="input-container space-y-2">
+                    <div class="flex gap-2">
+                      <input
+                        type="number"
+                        name="amount"
+                        id="amount"
+                        placeholder="Bid amount"
+                        class="w-full max-w-40 rounded-md border border-dark-gray p-2 outline-none focus:ring-1 focus:ring-dark-gray" />
 
-                    <button
-                      type="submit"
-                      class="rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
-                      Bid
-                    </button>
+                      <button
+                        type="submit"
+                        class="whitespace-nowrap rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
+                        Bid
+                      </button>
+                    </div>
                   </div>
                 </form>
 
