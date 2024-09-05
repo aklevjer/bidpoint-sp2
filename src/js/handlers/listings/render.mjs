@@ -3,7 +3,7 @@ import { createListingCard } from "../../templates/listings/index.mjs";
 
 export function renderSingleListing(listingData, parentElement) {
   const listingClone = createSingleListing(listingData);
-  parentElement.append(listingClone);
+  parentElement.appendChild(listingClone);
 }
 
 export function renderListings(listingDatas, parentElement) {
