@@ -1,13 +1,8 @@
 import { authFetch } from "../index.mjs";
-import {
-  API_PROFILES_URL,
-  API_PARAMS_PROFILES,
-} from "../../constants/index.mjs";
+import { API_PROFILES_URL } from "../../constants/index.mjs";
 
 export async function getProfileByName(profileName) {
-  const response = await authFetch(
-    `${API_PROFILES_URL}/${profileName}${API_PARAMS_PROFILES}`,
-  );
+  const response = await authFetch(`${API_PROFILES_URL}/${profileName}`);
 
   const responseData = await response.json();
 
