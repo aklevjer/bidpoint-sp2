@@ -1,5 +1,5 @@
 import { renderListings } from "./index.mjs";
-import { clearElement } from "../../utils/html/index.mjs";
+import { hideElement, clearElement } from "../../utils/html/index.mjs";
 
 export class ListingsHandler {
   constructor(container, limit = 4, showMore = false) {
@@ -27,7 +27,7 @@ export class ListingsHandler {
       renderListings(listings.data, this.container);
 
       if (this.showMoreBtn) {
-        this.showMoreBtn.classList.toggle("hidden", listings.meta.isLastPage);
+        hideElement(this.showMoreBtn, listings.meta.isLastPage);
       }
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ export class ListingsHandler {
     this.currentPage = 1;
     clearElement(this.container);
     if (this.showMoreBtn) {
-      this.showMoreBtn.classList.add("hidden");
+      hideElement(this.showMoreBtn);
     }
   }
 
