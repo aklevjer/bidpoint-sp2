@@ -8,11 +8,10 @@ export async function setupLoggedInHeader(container) {
   const { name } = storage.get("profile");
 
   try {
-    const profileData = await getProfileByName(name);
-    const { userMenuClone, userMenuBtn, logoutBtn } = createUserMenu(
-      profileData.data,
-    );
+    const { data } = await getProfileByName(name);
+    storage.set("profile", data);
 
+    const { userMenuClone, userMenuBtn, logoutBtn } = createUserMenu(data);
     container.appendChild(userMenuClone);
 
     userMenuBtn.addEventListener("click", toggleUserMenu);

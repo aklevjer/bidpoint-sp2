@@ -12,7 +12,6 @@ export const API_PROFILES = "/profiles";
 export const API_SEARCH = "/search";
 
 export const API_PARAMS_LISTINGS = "?_seller=true&_bids=true&_active=true";
-export const API_PARAMS_PROFILES = "?_listings=true&_wins=true";
 
 export const API_SORT_ENDING = "&sort=endsAt&sortOrder=asc";
 export const API_SORT_LATEST = "&sort=created&sortOrder=desc";

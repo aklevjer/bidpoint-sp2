@@ -1,5 +1,9 @@
-import { getTimeLeft, getCurrentBid } from "../../../utils/listings/index.mjs";
 import { formatDate } from "../../../utils/format/index.mjs";
+import {
+  getTimeLeft,
+  getExpiryStatus,
+  getCurrentBid,
+} from "../../../utils/listings/index.mjs";
 
 export function updateListingMeta(listingClone, listingData) {
   const listingTitle = listingClone.querySelector(".listing-title");
@@ -7,6 +11,7 @@ export function updateListingMeta(listingClone, listingData) {
   const listingBidLabel = listingClone.querySelector(".listing-bid-label");
   const listingBid = listingClone.querySelector(".listing-bid");
   const listingEndsIn = listingClone.querySelector(".listing-ends-in");
+  const listingEndsInIcon = listingClone.querySelector(".listing-ends-in-icon");
   const listingCreated = listingClone.querySelector(".listing-created");
 
   const { title, description, created, endsAt, bids } = listingData;
@@ -15,12 +20,25 @@ export function updateListingMeta(listingClone, listingData) {
   listingTitle.textContent = title;
 
   // Description
-  listingDescription.textContent = description;
+  if (!description) {
+    listingDescription.remove();
+  } else {
+    listingDescription.textContent = description;
+  }
 
   // Ends in
   const timeLeft = getTimeLeft(endsAt, true);
+  const isPastOrNearEnd = getExpiryStatus(endsAt);
   const hasEnded = timeLeft === "Ended";
+
   listingEndsIn.textContent = timeLeft;
+
+  listingEndsIn.classList.toggle("text-green", !isPastOrNearEnd);
+  listingEndsIn.classList.toggle("text-red", isPastOrNearEnd);
+
+  if (!isPastOrNearEnd || hasEnded) {
+    listingEndsInIcon.remove();
+  }
 
   // Bid
   const currentBid = getCurrentBid(bids);
