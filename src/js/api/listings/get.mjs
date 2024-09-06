@@ -1,13 +1,15 @@
 import { authFetch } from "../index.mjs";
 import {
   API_LISTINGS_URL,
-  API_PARAMS_LISTINGS,
+  API_PARAMS_DEFAULT,
+  API_PARAMS_ACTIVE,
+  API_PARAMS_SELLER,
   API_SORT_ENDING,
 } from "../../constants/index.mjs";
 
 export async function getListings(page, limit, sortOptions = API_SORT_ENDING) {
   const response = await authFetch(
-    `${API_LISTINGS_URL}${API_PARAMS_LISTINGS}&page=${page}&limit=${limit}${sortOptions}`,
+    `${API_LISTINGS_URL}${API_PARAMS_DEFAULT}${API_PARAMS_ACTIVE}${sortOptions}&page=${page}&limit=${limit}`,
   );
 
   const responseData = await response.json();
@@ -24,7 +26,7 @@ export async function getListings(page, limit, sortOptions = API_SORT_ENDING) {
 
 export async function getListingById(listingId) {
   const response = await authFetch(
-    `${API_LISTINGS_URL}/${listingId}${API_PARAMS_LISTINGS}`,
+    `${API_LISTINGS_URL}/${listingId}${API_PARAMS_DEFAULT}${API_PARAMS_SELLER}`,
   );
 
   const responseData = await response.json();
