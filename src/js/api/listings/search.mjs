@@ -1,9 +1,9 @@
 import { authFetch } from "../index.mjs";
-import { API_SEARCH_URL, API_PARAMS_LISTINGS } from "../../constants/index.mjs";
+import { API_SEARCH_URL, API_PARAMS_DEFAULT } from "../../constants/index.mjs";
 
 export async function searchListings(page, limit, query) {
   const response = await authFetch(
-    `${API_SEARCH_URL}${API_PARAMS_LISTINGS}&page=${page}&limit=${limit}&q=${query}`,
+    `${API_SEARCH_URL}${API_PARAMS_DEFAULT}&q=${query}&page=${page}&limit=${limit}`,
   );
 
   const responseData = await response.json();

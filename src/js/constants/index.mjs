@@ -8,10 +8,13 @@ export const API_LOGIN = "/login";
 export const API_AUCTION = "/auction";
 export const API_LISTINGS = "/listings";
 export const API_BIDS = "/bids";
+export const API_WINS = "/wins";
 export const API_PROFILES = "/profiles";
 export const API_SEARCH = "/search";
 
-export const API_PARAMS_LISTINGS = "?_seller=true&_bids=true&_active=true";
+export const API_PARAMS_DEFAULT = "?_bids=true";
+export const API_PARAMS_SELLER = "&_seller=true";
+export const API_PARAMS_ACTIVE = "&_active=true";
 
 export const API_SORT_ENDING = "&sort=endsAt&sortOrder=asc";
 export const API_SORT_LATEST = "&sort=created&sortOrder=desc";
