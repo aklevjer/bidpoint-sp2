@@ -1,5 +1,5 @@
 import * as storage from "../utils/storage/index.mjs";
-import { renderProfile } from "../handlers/profiles/index.mjs";
+import { renderProfile, setTabListeners } from "../handlers/profiles/index.mjs";
 import { ListingsHandler } from "../handlers/listings/index.mjs";
 import { isLoggedIn, setPageTitle } from "../utils/misc/index.mjs";
 import {
@@ -29,6 +29,8 @@ export async function profilePage({ user }) {
     const profileListings = document.querySelector(".profile-listings");
     const profileListHandler = new ListingsHandler(profileListings, 4, true);
     profileListHandler.setCallback(getListingsByProfile, profileName);
+
+    setTabListeners(profileListHandler, profileName);
   } catch (error) {
     console.error(error);
   }
