@@ -23,6 +23,11 @@ export function createModal(modalType) {
       modalContent = getTemplateClone("listing-form");
       modalSize = "max-w-2xl";
       break;
+
+    case "profile":
+      modalContent = getTemplateClone("profile-form");
+      modalSize = "max-w-lg";
+      break;
   }
 
   modalContainer.appendChild(modalContent);
