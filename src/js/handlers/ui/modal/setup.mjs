@@ -1,5 +1,6 @@
 import * as storage from "../../../utils/storage/index.mjs";
 import { handleLogin, handleRegister } from "../../auth/index.mjs";
+import { handleUpdateProfile } from "../../profiles/index.mjs";
 import {
   handleCreateListing,
   handleAddThumbnail,
@@ -50,6 +51,7 @@ export function setupModal(modal, modalType) {
 
       avatarInput.value = avatar.url;
       cancelBtn.addEventListener("click", closeModal);
+      modalForm.addEventListener("submit", handleUpdateProfile);
       break;
     }
   }

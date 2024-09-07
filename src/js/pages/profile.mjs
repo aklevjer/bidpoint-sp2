@@ -1,11 +1,15 @@
 import * as storage from "../utils/storage/index.mjs";
-import { renderProfile, setTabListeners } from "../handlers/profiles/index.mjs";
 import { ListingsHandler } from "../handlers/listings/index.mjs";
 import { isLoggedIn, setPageTitle } from "../utils/misc/index.mjs";
 import {
   getProfileByName,
   getListingsByProfile,
 } from "../api/profiles/index.mjs";
+import {
+  renderProfile,
+  setTabListeners,
+  setUpdateProfileListener,
+} from "../handlers/profiles/index.mjs";
 
 export async function profilePage({ user }) {
   if (!isLoggedIn()) {
@@ -31,6 +35,7 @@ export async function profilePage({ user }) {
     profileListHandler.setCallback(getListingsByProfile, profileName);
 
     setTabListeners(profileListHandler, profileName);
+    setUpdateProfileListener();
   } catch (error) {
     console.error(error);
   }
