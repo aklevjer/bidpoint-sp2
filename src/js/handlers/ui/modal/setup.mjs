@@ -1,3 +1,4 @@
+import * as storage from "../../../utils/storage/index.mjs";
 import { handleLogin, handleRegister } from "../../auth/index.mjs";
 import {
   handleCreateListing,
@@ -38,6 +39,17 @@ export function setupModal(modal, modalType) {
       addBtn.addEventListener("click", handleAddThumbnail);
       cancelBtn.addEventListener("click", closeModal);
       modalForm.addEventListener("submit", handleCreateListing);
+      break;
+    }
+
+    case "profile": {
+      const avatarInput = modal.querySelector(".avatar-url");
+      const cancelBtn = modal.querySelector(".cancel-btn");
+
+      const { avatar } = storage.get("profile");
+
+      avatarInput.value = avatar.url;
+      cancelBtn.addEventListener("click", closeModal);
       break;
     }
   }
