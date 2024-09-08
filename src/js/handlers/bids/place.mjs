@@ -28,8 +28,6 @@ export function setBidFormListener(listingId) {
   const bidForm = document.forms.bid;
 
   if (bidForm) {
-    bidForm.addEventListener("submit", (event) =>
-      handlePlaceBid(event, listingId),
-    );
+    bidForm.addEventListener("submit", (event) => handlePlaceBid(event, listingId));
   }
 }

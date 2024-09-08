@@ -20,10 +20,7 @@ export function createListingCard(listingData) {
   // Image
   cardImage.src = media[0]?.url || DEFAULT_LISTING_IMG;
   cardImage.alt = media[0]?.alt || title;
-  cardImage.setAttribute(
-    "onerror",
-    `this.onerror=null;this.src="${DEFAULT_LISTING_IMG}";`,
-  );
+  cardImage.setAttribute("onerror", `this.onerror=null;this.src="${DEFAULT_LISTING_IMG}";`);
 
   // Time left
   const timeLeft = getTimeLeft(endsAt, false);

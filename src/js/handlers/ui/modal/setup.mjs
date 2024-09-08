@@ -1,16 +1,8 @@
 import * as storage from "../../../utils/storage/index.mjs";
 import { handleLogin, handleRegister } from "../../auth/index.mjs";
 import { handleUpdateProfile } from "../../profiles/index.mjs";
-import {
-  handleCreateListing,
-  handleAddThumbnail,
-} from "../../listings/index.mjs";
-import {
-  swapModal,
-  closeModal,
-  closeModalOutside,
-  closeModalEscKey,
-} from "./index.mjs";
+import { handleCreateListing, handleAddThumbnail } from "../../listings/index.mjs";
+import { swapModal, closeModal, closeModalOutside, closeModalEscKey } from "./index.mjs";
 
 export function setupModal(modal, modalType) {
   const modalForm = modal.querySelector("form");

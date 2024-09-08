@@ -12,10 +12,7 @@ export function updateListingImage(listingClone, listingData) {
   // Image
   listingImg.src = media[0]?.url || DEFAULT_LISTING_IMG;
   listingImg.alt = media[0]?.alt || title;
-  listingImg.setAttribute(
-    "onerror",
-    `this.onerror=null;this.src="${DEFAULT_LISTING_IMG}";`,
-  );
+  listingImg.setAttribute("onerror", `this.onerror=null;this.src="${DEFAULT_LISTING_IMG}";`);
 
   if (media.length <= 1) {
     hideElement(prevBtn);

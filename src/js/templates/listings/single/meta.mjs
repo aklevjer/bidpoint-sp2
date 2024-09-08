@@ -1,9 +1,5 @@
 import { formatDate } from "../../../utils/format/index.mjs";
-import {
-  getTimeLeft,
-  getExpiryStatus,
-  getCurrentBid,
-} from "../../../utils/listings/index.mjs";
+import { getTimeLeft, getExpiryStatus, getCurrentBid } from "../../../utils/listings/index.mjs";
 
 export function updateListingMeta(listingClone, listingData) {
   const listingTitle = listingClone.querySelector(".listing-title");

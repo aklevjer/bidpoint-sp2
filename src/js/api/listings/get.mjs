@@ -18,8 +18,7 @@ export async function getListings(page, limit, sortOptions = API_SORT_ENDING) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to retrieve the listings";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to retrieve the listings";
 
   throw new Error(errorMessage);
 }
@@ -35,8 +34,7 @@ export async function getListingById(listingId) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to retrieve the listing";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to retrieve the listing";
 
   throw new Error(errorMessage);
 }
