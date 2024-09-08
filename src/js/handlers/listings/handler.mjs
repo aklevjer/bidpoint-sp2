@@ -11,6 +11,7 @@ export class ListingsHandler {
     this.isSearching = false;
     this.container = container;
 
+    this.loader = document.querySelector(".loader");
     this.resultsLabel = document.querySelector(".results-label");
     this.showMoreBtn = document.querySelector(".show-more-btn");
 
@@ -20,6 +21,8 @@ export class ListingsHandler {
   }
 
   async loadListings() {
+    hideElement(this.loader, false);
+
     try {
       const listings = await this.fetchCallback(
         this.currentPage,
@@ -33,6 +36,8 @@ export class ListingsHandler {
       hideElement(this.showMoreBtn, listings.meta.isLastPage);
     } catch (error) {
       console.error(error);
+    } finally {
+      hideElement(this.loader, true);
     }
   }
 
