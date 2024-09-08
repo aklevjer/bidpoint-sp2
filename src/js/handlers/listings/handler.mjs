@@ -1,17 +1,20 @@
 import { renderListings } from "./index.mjs";
+import { searchListings } from "../../api/listings/index.mjs";
 import { hideElement, clearElement } from "../../utils/html/index.mjs";
 
 export class ListingsHandler {
-  constructor(container, limit = 4, showMore = false) {
+  constructor(container, limit = 4) {
     this.limit = limit;
     this.currentPage = 1;
     this.fetchCallback = null;
     this.fetchParams = null;
-    this.showMore = showMore;
-    this.showMoreBtn = null;
+    this.isSearching = false;
     this.container = container;
 
-    if (this.showMore) {
+    this.resultsLabel = document.querySelector(".results-label");
+    this.showMoreBtn = document.querySelector(".show-more-btn");
+
+    if (this.showMoreBtn) {
       this.setupShowMore();
     }
   }
@@ -25,20 +28,27 @@ export class ListingsHandler {
       );
 
       renderListings(listings.data, this.container);
+      this.updateResults(listings.meta.totalCount, ...this.fetchParams);
 
-      if (this.showMoreBtn) {
-        hideElement(this.showMoreBtn, listings.meta.isLastPage);
-      }
+      hideElement(this.showMoreBtn, listings.meta.isLastPage);
     } catch (error) {
       console.error(error);
     }
   }
 
-  setupShowMore() {
-    this.showMoreBtn = document.querySelector(".show-more-btn");
-    if (this.showMoreBtn) {
-      this.showMoreBtn.addEventListener("click", () => this.loadNextPage());
+  updateResults(resultsCount, searchQuery) {
+    if (!this.resultsLabel) return;
+
+    if (this.isSearching) {
+      const resultsText = `Found ${resultsCount} result${resultsCount !== 1 ? "s" : ""} for ‘${searchQuery}’`;
+      this.resultsLabel.textContent = resultsText;
     }
+
+    hideElement(this.resultsLabel, !this.isSearching);
+  }
+
+  setupShowMore() {
+    this.showMoreBtn.addEventListener("click", () => this.loadNextPage());
   }
 
   loadNextPage() {
@@ -49,14 +59,14 @@ export class ListingsHandler {
   reset() {
     this.currentPage = 1;
     clearElement(this.container);
-    if (this.showMoreBtn) {
-      hideElement(this.showMoreBtn);
-    }
+    hideElement(this.resultsLabel);
+    hideElement(this.showMoreBtn);
   }
 
   setCallback(callback, ...params) {
     this.fetchCallback = callback;
     this.fetchParams = [...params];
+    this.isSearching = callback === searchListings;
     this.reset();
     this.loadListings();
   }

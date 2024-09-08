@@ -31,7 +31,7 @@ export async function profilePage({ user }) {
     setPageTitle(profileName);
 
     const profileListings = document.querySelector(".profile-listings");
-    const profileListHandler = new ListingsHandler(profileListings, 4, true);
+    const profileListHandler = new ListingsHandler(profileListings);
     profileListHandler.setCallback(getListingsByProfile, profileName);
 
     setTabListeners(profileListHandler, profileName);
