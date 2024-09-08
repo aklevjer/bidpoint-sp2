@@ -13,8 +13,7 @@ export async function register(account) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to register the account";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to register the account";
 
   throw new Error(errorMessage);
 }

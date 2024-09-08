@@ -9,8 +9,6 @@ export function setSortListener(listingsHandler) {
   const sortSelect = document.querySelector("#sort");
 
   if (sortSelect) {
-    sortSelect.addEventListener("change", (event) =>
-      handleSortListings(event, listingsHandler),
-    );
+    sortSelect.addEventListener("change", (event) => handleSortListings(event, listingsHandler));
   }
 }

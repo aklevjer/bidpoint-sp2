@@ -24,11 +24,7 @@ export class ListingsHandler {
     hideElement(this.loader, false);
 
     try {
-      const listings = await this.fetchCallback(
-        this.currentPage,
-        this.limit,
-        ...this.fetchParams,
-      );
+      const listings = await this.fetchCallback(this.currentPage, this.limit, ...this.fetchParams);
 
       renderListings(listings.data, this.container);
       this.updateResults(listings.meta.totalCount, ...this.fetchParams);

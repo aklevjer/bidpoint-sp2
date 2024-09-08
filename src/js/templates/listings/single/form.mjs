@@ -15,8 +15,7 @@ export function updateListingBidForm(listingClone, listingData) {
 
   if (hasEnded) {
     bidForm.remove();
-    bidFormLabel.textContent =
-      "This listing has ended, bidding is no longer available.";
+    bidFormLabel.textContent = "This listing has ended, bidding is no longer available.";
   } else if (isUserSeller) {
     bidForm.remove();
     bidFormLabel.textContent = "You cannot bid on your own listing.";

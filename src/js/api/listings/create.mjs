@@ -13,8 +13,7 @@ export async function createListing(listingData) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to create the listing";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to create the listing";
 
   throw new Error(errorMessage);
 }

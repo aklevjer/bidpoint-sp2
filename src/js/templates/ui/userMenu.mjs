@@ -14,10 +14,7 @@ export function createUserMenu(userData) {
   // User avatar
   userMenuAvatar.src = avatar.url || DEFAULT_AVATAR_IMG;
   userMenuAvatar.alt = avatar.alt || `Avatar for ${name}`;
-  userMenuAvatar.setAttribute(
-    "onerror",
-    `this.onerror=null;this.src="${DEFAULT_AVATAR_IMG}";`,
-  );
+  userMenuAvatar.setAttribute("onerror", `this.onerror=null;this.src="${DEFAULT_AVATAR_IMG}";`);
 
   // User name
   userMenuName.textContent = name;

@@ -1,7 +1,4 @@
-import {
-  getListingsByProfile,
-  getWinsByProfile,
-} from "../../api/profiles/index.mjs";
+import { getListingsByProfile, getWinsByProfile } from "../../api/profiles/index.mjs";
 
 function handleTabClicked(selectedBtn, profileListHandler, profileName) {
   const callbacks = [getListingsByProfile, getWinsByProfile];
@@ -21,8 +18,6 @@ export function setTabListeners(profileListHandler, profileName) {
   const tabBtns = document.querySelectorAll(".tab-btn");
 
   tabBtns.forEach((btn) => {
-    btn.addEventListener("click", () =>
-      handleTabClicked(btn, profileListHandler, profileName),
-    );
+    btn.addEventListener("click", () => handleTabClicked(btn, profileListHandler, profileName));
   });
 }

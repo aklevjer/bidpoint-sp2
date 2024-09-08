@@ -2,9 +2,7 @@ import { DEFAULT_AVATAR_IMG } from "../../../constants/index.mjs";
 
 export function updateListingSeller(listingClone, listingData) {
   const listingSellerLink = listingClone.querySelector(".listing-seller-link");
-  const listingSellerAvatar = listingClone.querySelector(
-    ".listing-seller-avatar",
-  );
+  const listingSellerAvatar = listingClone.querySelector(".listing-seller-avatar");
   const listingSellerName = listingClone.querySelector(".listing-seller-name");
 
   const { seller } = listingData;

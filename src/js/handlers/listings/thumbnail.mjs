@@ -26,7 +26,5 @@ function insertThumbnail(imgContainer, imgUrl, imgIndex) {
   );
 
   imgContainer.appendChild(thumbnailClone);
-  thumbnailRemBtn.addEventListener("click", () =>
-    thumbnailRemBtn.parentElement.remove(),
-  );
+  thumbnailRemBtn.addEventListener("click", () => thumbnailRemBtn.parentElement.remove());
 }

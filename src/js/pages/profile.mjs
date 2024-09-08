@@ -2,10 +2,7 @@ import * as storage from "../utils/storage/index.mjs";
 import { ListingsHandler } from "../handlers/listings/index.mjs";
 import { isLoggedIn, setPageTitle } from "../utils/misc/index.mjs";
 import { clearElement } from "../utils/html/index.mjs";
-import {
-  getProfileByName,
-  getListingsByProfile,
-} from "../api/profiles/index.mjs";
+import { getProfileByName, getListingsByProfile } from "../api/profiles/index.mjs";
 import {
   renderProfile,
   setTabListeners,
@@ -24,9 +21,7 @@ export async function profilePage({ user }) {
   const profileContainer = document.querySelector(".profile-container");
 
   try {
-    const profileData = isOwner
-      ? profile
-      : (await getProfileByName(profileName)).data;
+    const profileData = isOwner ? profile : (await getProfileByName(profileName)).data;
 
     clearElement(profileContainer);
     renderProfile(profileData, profileContainer);

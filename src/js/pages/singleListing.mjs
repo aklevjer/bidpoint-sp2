@@ -4,10 +4,7 @@ import { clearElement } from "../utils/html/index.mjs";
 import { setPageTitle } from "../utils/misc/index.mjs";
 import { ImageGallery, setGoBackListener } from "../handlers/ui/index.mjs";
 import { setLoginListener } from "../handlers/auth/index.mjs";
-import {
-  setBidFormListener,
-  setShowAllListener,
-} from "../handlers/bids/index.mjs";
+import { setBidFormListener, setShowAllListener } from "../handlers/bids/index.mjs";
 
 export async function singleListingPage({ id }) {
   if (!id) {

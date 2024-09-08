@@ -15,8 +15,7 @@ export async function getProfileByName(profileName) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to retrieve the profile";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to retrieve the profile";
 
   throw new Error(errorMessage);
 }
@@ -33,8 +32,7 @@ export async function getListingsByProfile(page, limit, profileName) {
   }
 
   const errorMessage =
-    responseData?.errors[0]?.message ||
-    "Failed to retrieve the listings for the profile";
+    responseData?.errors[0]?.message || "Failed to retrieve the listings for the profile";
 
   throw new Error(errorMessage);
 }
@@ -51,8 +49,7 @@ export async function getWinsByProfile(page, limit, profileName) {
   }
 
   const errorMessage =
-    responseData?.errors[0]?.message ||
-    "Failed to retrieve the won listings for the profile";
+    responseData?.errors[0]?.message || "Failed to retrieve the won listings for the profile";
 
   throw new Error(errorMessage);
 }

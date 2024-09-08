@@ -12,8 +12,7 @@ export async function searchListings(page, limit, query) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to search the listings";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to search the listings";
 
   throw new Error(errorMessage);
 }

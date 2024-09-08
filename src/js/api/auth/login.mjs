@@ -19,8 +19,7 @@ export async function login(account) {
     return profile;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to login to the account";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to login to the account";
 
   throw new Error(errorMessage);
 }

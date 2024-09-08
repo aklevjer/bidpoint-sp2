@@ -13,8 +13,7 @@ export async function updateProfile(profileName, profileData) {
     return responseData;
   }
 
-  const errorMessage =
-    responseData?.errors[0]?.message || "Failed to update your profile";
+  const errorMessage = responseData?.errors[0]?.message || "Failed to update your profile";
 
   throw new Error(errorMessage);
 }

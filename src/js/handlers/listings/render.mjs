@@ -7,8 +7,6 @@ export function renderSingleListing(listingData, parentElement) {
 }
 
 export function renderListings(listingDatas, parentElement) {
-  const listingClones = listingDatas.map((listingData) =>
-    createListingCard(listingData),
-  );
+  const listingClones = listingDatas.map((listingData) => createListingCard(listingData));
   parentElement.append(...listingClones);
 }

@@ -15,9 +15,7 @@ export function setSearchListener(listingsHandler) {
   const searchInput = document.querySelector("#search");
 
   if (searchInput) {
-    const processInput = debounce((event) =>
-      handleSearchListings(event, listingsHandler),
-    );
+    const processInput = debounce((event) => handleSearchListings(event, listingsHandler));
     searchInput.addEventListener("input", (event) => processInput(event));
   }
 }

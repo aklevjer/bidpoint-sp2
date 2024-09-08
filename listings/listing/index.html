@@ -12,21 +12,15 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Manrope:wght@400;500;600;700&display=swap" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
     <link rel="stylesheet" href="/src/css/index.css" />
     <script type="module" src="/src/js/index.mjs"></script>
   </head>
   <body class="grid min-h-screen grid-rows-layout">
     <header class="bg-dark-gray text-white">
-      <div
-        class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
+      <div class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
         <div class="flex items-center gap-4">
-          <button
-            class="nav-btn text-2xl md:hidden"
-            aria-expanded="false"
-            aria-label="Menu">
+          <button class="nav-btn text-2xl md:hidden" aria-expanded="false" aria-label="Menu">
             <i class="nav-icon bx bx-menu"></i>
           </button>
 
@@ -41,22 +35,15 @@
           <ul
             class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
             <li>
-              <a href="/" class="transition-colors hover:text-light-orange">
-                Home
-              </a>
+              <a href="/" class="transition-colors hover:text-light-orange">Home</a>
             </li>
 
             <li>
-              <a
-                href="/listings/"
-                class="transition-colors hover:text-light-orange">
-                Listings
-              </a>
+              <a href="/listings/" class="transition-colors hover:text-light-orange">Listings</a>
             </li>
 
             <li>
-              <button
-                class="create-listing-btn transition-colors hover:text-light-orange">
+              <button class="create-listing-btn transition-colors hover:text-light-orange">
                 Sell
               </button>
             </li>
@@ -75,8 +62,7 @@
     </main>
 
     <footer class="bg-dark-gray text-white">
-      <div
-        class="container flex flex-col items-center justify-between gap-6 py-6 md:flex-row">
+      <div class="container flex flex-col items-center justify-between gap-6 py-6 md:flex-row">
         <a href="/" class="flex items-center gap-2">
           <img src="/assets/logo.svg" alt="BidPoint logo" />
           <span class="font-poppins text-lg font-semibold">BidPoint</span>
@@ -84,37 +70,25 @@
 
         <ul class="flex gap-6 text-2xl md:order-last">
           <li>
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="transition-colors hover:text-light-orange">
+            <a href="#" aria-label="Facebook" class="transition-colors hover:text-light-orange">
               <i class="bx bxl-facebook-square"></i>
             </a>
           </li>
 
           <li>
-            <a
-              href="#"
-              aria-label="Instagram"
-              class="transition-colors hover:text-light-orange">
+            <a href="#" aria-label="Instagram" class="transition-colors hover:text-light-orange">
               <i class="bx bxl-instagram"></i>
             </a>
           </li>
 
           <li>
-            <a
-              href="#"
-              aria-label="Twitter"
-              class="transition-colors hover:text-light-orange">
+            <a href="#" aria-label="Twitter" class="transition-colors hover:text-light-orange">
               <i class="bx bxl-twitter"></i>
             </a>
           </li>
 
           <li>
-            <a
-              href="#"
-              aria-label="Pinterest"
-              class="transition-colors hover:text-light-orange">
+            <a href="#" aria-label="Pinterest" class="transition-colors hover:text-light-orange">
               <i class="bx bxl-pinterest"></i>
             </a>
           </li>
@@ -128,8 +102,7 @@
     <div class="hidden">
       <template id="modal-template">
         <dialog class="modal w-full bg-transparent backdrop:bg-black/70">
-          <section
-            class="modal-container relative mx-4 rounded-md bg-white px-4 py-8 sm:px-10">
+          <section class="modal-container relative mx-4 rounded-md bg-white px-4 py-8 sm:px-10">
             <button
               aria-label="Close modal"
               class="modal-close-btn absolute right-4 top-4 grid place-items-center text-3xl">
@@ -251,9 +224,7 @@
             </div>
 
             <div class="input-container flex-1 space-y-2">
-              <label for="endsAt" class="text-m font-semibold">
-                End date and time
-              </label>
+              <label for="endsAt" class="text-m font-semibold">End date and time</label>
               <input
                 type="datetime-local"
                 id="endsAt"
@@ -314,10 +285,7 @@
 
       <template id="thumbnail-template">
         <div class="relative">
-          <img
-            src=""
-            alt=""
-            class="thumbnail-img size-24 rounded-md object-cover" />
+          <img src="" alt="" class="thumbnail-img size-24 rounded-md object-cover" />
 
           <button
             type="button"
@@ -329,8 +297,7 @@
       </template>
 
       <template id="input-error-template">
-        <div
-          class="input-error flex items-center gap-1 text-m font-semibold text-red">
+        <div class="input-error flex items-center gap-1 text-m font-semibold text-red">
           <i class="bx bx-error-circle text-lg"></i>
           <p class="input-error-msg leading-none"></p>
         </div>
@@ -344,13 +311,8 @@
       </template>
 
       <template id="user-menu-template">
-        <button
-          aria-expanded="false"
-          class="user-menu-btn group flex items-center md:gap-2">
-          <img
-            src=""
-            alt=""
-            class="user-menu-avatar size-10 rounded-full object-cover" />
+        <button aria-expanded="false" class="user-menu-btn group flex items-center md:gap-2">
+          <img src="" alt="" class="user-menu-avatar size-10 rounded-full object-cover" />
 
           <div class="hidden md:flex md:flex-col md:items-start">
             <span class="user-menu-name max-w-36 truncate font-semibold"></span>
@@ -476,8 +438,7 @@
 
                 <p class="bid-form-label">
                   You need to
-                  <button
-                    class="auth-login-btn font-semibold underline underline-offset-4">
+                  <button class="auth-login-btn font-semibold underline underline-offset-4">
                     login
                   </button>
                   to bid on this listing.
