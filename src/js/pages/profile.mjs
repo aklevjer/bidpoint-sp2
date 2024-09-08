@@ -3,6 +3,7 @@ import { ListingsHandler } from "../handlers/listings/index.mjs";
 import { isLoggedIn, setPageTitle } from "../utils/misc/index.mjs";
 import { clearElement } from "../utils/html/index.mjs";
 import { getProfileByName, getListingsByProfile } from "../api/profiles/index.mjs";
+import { showAlert } from "../handlers/ui/index.mjs";
 import {
   renderProfile,
   setTabListeners,
@@ -34,6 +35,7 @@ export async function profilePage({ user }) {
     setTabListeners(profileListHandler, profileName);
     setUpdateProfileListener();
   } catch (error) {
-    console.error(error);
+    clearElement(profileContainer);
+    showAlert("error", "Oops! Failed to load profile. Please try again later.", profileContainer);
   }
 }
