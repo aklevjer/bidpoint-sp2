@@ -67,7 +67,12 @@
       </div>
     </header>
 
-    <main class="profile-container container py-20"></main>
+    <main class="profile-container container py-20">
+      <div class="grid size-full place-items-center">
+        <div
+          class="loader m-auto size-20 animate-spin rounded-full border-6 border-x-transparent border-y-dark-orange"></div>
+      </div>
+    </main>
 
     <footer class="bg-dark-gray text-white">
       <div
@@ -417,7 +422,7 @@
               <img
                 src=""
                 alt=""
-                class="listing-card-image aspect-3/2 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                class="listing-card-image aspect-3/2 size-full object-cover transition-transform duration-300 group-hover:scale-110" />
 
               <div
                 class="absolute left-0 top-0 flex items-center gap-1 rounded-br-md bg-dark-gray p-2 text-white">
@@ -456,7 +461,7 @@
             </button>
           </div>
 
-          <div>
+          <div class="overflow-wrap-anywhere">
             <h1 class="profile-name text-2xl font-bold"></h1>
 
             <div class="profile-credits">
@@ -487,6 +492,9 @@
 
           <ul
             class="profile-listings overflow-wrap-anywhere grid grid-cols-autofill-220 gap-x-6 gap-y-8"></ul>
+
+          <div
+            class="loader mx-auto my-8 size-20 animate-spin rounded-full border-6 border-x-transparent border-y-dark-orange"></div>
 
           <div class="mt-8 flex justify-center">
             <button
