@@ -1,6 +1,7 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { register, login } from "../../api/auth/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleRegister(event) {
   event.preventDefault();
@@ -19,7 +20,7 @@ export async function handleRegister(event) {
     await login({ email, password });
     location.reload();
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message, registerForm);
   }
 }
 

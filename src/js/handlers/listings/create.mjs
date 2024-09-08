@@ -3,6 +3,7 @@ import { isFormValid } from "../../utils/validation/index.mjs";
 import { formatMedia } from "../../utils/format/index.mjs";
 import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleCreateListing(event) {
   event.preventDefault();
@@ -32,7 +33,7 @@ export async function handleCreateListing(event) {
     const { id } = createdListing.data;
     location.href = `/listings/listing/?id=${id}`;
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message, createListingForm);
   }
 }
 

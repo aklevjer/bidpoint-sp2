@@ -4,6 +4,7 @@ import { isImgUrlValid } from "../../utils/validation/index.mjs";
 import { toggleInputError } from "../ui/index.mjs";
 import { openModal, closeModal } from "../ui/modal/index.mjs";
 import { updateHeader } from "../ui/header/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export async function handleUpdateProfile(event) {
   event.preventDefault();
@@ -35,7 +36,7 @@ export async function handleUpdateProfile(event) {
     profileAvatar.src = updatedProfile.avatar.url;
     profileAvatar.alt = updatedProfile.avatar.alt;
   } catch (error) {
-    console.error(error);
+    showAlert("error", error.message, profileForm);
   }
 }
 

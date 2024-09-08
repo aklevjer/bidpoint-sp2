@@ -1,10 +1,10 @@
 import { createAlert } from "../../templates/ui/index.mjs";
 
 export function showAlert(alertType, alertMessage, parentElement = null, shouldReplace = false) {
-  const existingAlert = document.querySelector(".alert");
+  const existingAlertContent = document.querySelector(".alert-content");
 
-  if (existingAlert) {
-    existingAlert.remove();
+  if (existingAlertContent) {
+    existingAlertContent.parentElement.remove();
   }
 
   const isToast = parentElement === null;

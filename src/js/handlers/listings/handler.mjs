@@ -1,6 +1,7 @@
 import { renderListings } from "./index.mjs";
 import { searchListings } from "../../api/listings/index.mjs";
 import { hideElement, clearElement } from "../../utils/html/index.mjs";
+import { showAlert } from "../ui/index.mjs";
 
 export class ListingsHandler {
   constructor(container, limit = 4) {
@@ -26,12 +27,22 @@ export class ListingsHandler {
     try {
       const listings = await this.fetchCallback(this.currentPage, this.limit, ...this.fetchParams);
 
+      if (!listings.data.length && !this.isSearching) {
+        this.container.textContent = "No listings found.";
+        return;
+      }
+
       renderListings(listings.data, this.container);
       this.updateResults(listings.meta.totalCount, ...this.fetchParams);
 
       hideElement(this.showMoreBtn, listings.meta.isLastPage);
     } catch (error) {
-      console.error(error);
+      showAlert(
+        "error",
+        "Oops! Failed to load listings. Please try again later.",
+        this.container,
+        true,
+      );
     } finally {
       hideElement(this.loader, true);
     }
