@@ -87,8 +87,8 @@
 
         <p class="results-label mb-6 hidden font-medium"></p>
 
-        <ul
-          class="listings-container overflow-wrap-anywhere grid grid-cols-autofill-220 gap-x-6 gap-y-8"></ul>
+        <div
+          class="listings-container overflow-wrap-anywhere grid grid-cols-autofill-220 gap-x-6 gap-y-8"></div>
 
         <div
           class="loader mx-auto my-24 size-20 animate-spin rounded-full border-6 border-x-transparent border-y-dark-orange"></div>
@@ -344,6 +344,15 @@
         </div>
       </template>
 
+      <template id="alert-template">
+        <div class="alert-container fixed bottom-6 flex w-full justify-center">
+          <div class="alert-content flex items-center gap-2 rounded-md bg-white p-3 font-medium">
+            <i class="alert-icon"></i>
+            <p class="alert-message"></p>
+          </div>
+        </div>
+      </template>
+
       <template id="login-btn-template">
         <button
           class="login-btn rounded-md border border-light-orange px-4 py-1.5 font-semibold transition-colors hover:border-white">
@@ -386,7 +395,7 @@
       </template>
 
       <template id="listing-card-template">
-        <li class="group rounded-md shadow-custom">
+        <article class="group rounded-md shadow-custom">
           <a href="" class="listing-card-link rounded-md">
             <div class="relative overflow-hidden rounded-t-md">
               <img
@@ -413,7 +422,7 @@
               </div>
             </div>
           </a>
-        </li>
+        </article>
       </template>
     </div>
   </body>
