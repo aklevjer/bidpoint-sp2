@@ -7,7 +7,7 @@ import {
 
 export function listingsPage() {
   const listingsContainer = document.querySelector(".listings-container");
-  const listingsHandler = new ListingsHandler(listingsContainer, 12, true);
+  const listingsHandler = new ListingsHandler(listingsContainer, 12);
   listingsHandler.setCallback(getListings);
 
   setSearchListener(listingsHandler);

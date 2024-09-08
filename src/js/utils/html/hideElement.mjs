@@ -1,3 +1,5 @@
 export function hideElement(element, shouldHide = true) {
-  element.classList.toggle("hidden", shouldHide);
+  if (element) {
+    element.classList.toggle("hidden", shouldHide);
+  }
 }
