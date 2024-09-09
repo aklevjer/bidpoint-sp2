@@ -10,10 +10,10 @@ export async function handleAddThumbnail() {
 
   if (imgCount >= maxCount) return;
 
-  const isValid = await isImgUrlValid(imgUrlInput.value);
-  toggleInputError(imgUrlInput, "URL must be a valid image URL", !isValid);
+  const isUrlValid = await isImgUrlValid(imgUrlInput.value);
+  toggleInputError(imgUrlInput, "URL must be a valid image URL", !isUrlValid);
 
-  if (!isValid) return;
+  if (!isUrlValid) return;
 
   insertThumbnail(thumbnailContainer, imgUrlInput.value, imgCount + 1);
   imgUrlInput.value = "";
