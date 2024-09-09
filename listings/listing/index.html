@@ -151,7 +151,7 @@
               Don't have an account?
               <button
                 type="button"
-                class="goto-register-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-register-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Register now
               </button>
             </p>
@@ -204,7 +204,7 @@
               Already have an account?
               <button
                 type="button"
-                class="goto-login-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-login-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Login
               </button>
             </p>
@@ -418,13 +418,13 @@
               <div class="mt-2 flex gap-1">
                 <span>Seller:</span>
 
-                <a href="" class="listing-seller-link flex gap-1 font-semibold">
+                <a href="" class="listing-seller-link group flex gap-1 font-semibold">
                   <img
                     src=""
                     alt=""
                     class="listing-seller-avatar size-6 rounded-full object-cover" />
 
-                  <span class="listing-seller-name"></span>
+                  <span class="listing-seller-name underline-offset-4 group-hover:underline"></span>
                 </a>
               </div>
 
@@ -451,7 +451,7 @@
 
                 <p class="bid-form-label">
                   You need to
-                  <button class="auth-login-btn font-semibold underline underline-offset-4">
+                  <button class="auth-login-btn font-semibold underline-offset-4 hover:underline">
                     login
                   </button>
                   to bid on this listing.
@@ -465,7 +465,9 @@
               <ul class="bids-list">
                 <li
                   class="bid-item flex justify-between p-2 odd:border-y odd:border-gray odd:bg-light-gray">
-                  <a href="" class="bidder-name font-semibold"></a>
+                  <a
+                    href=""
+                    class="bidder-name font-semibold underline-offset-4 hover:underline"></a>
                   <span class="bid-amount"></span>
                 </li>
               </ul>
