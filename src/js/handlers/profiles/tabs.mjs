@@ -2,8 +2,9 @@ import { getListingsByProfile, getWinsByProfile } from "../../api/profiles/index
 
 function handleTabClicked(selectedBtn, profileListHandler, profileName) {
   const callbacks = [getListingsByProfile, getWinsByProfile];
+  const tabBtns = document.querySelectorAll(".tab-btn");
 
-  document.querySelectorAll(".tab-btn").forEach((tab, index) => {
+  tabBtns.forEach((tab, index) => {
     const isSelected = tab === selectedBtn;
 
     tab.setAttribute("data-selected", isSelected);
