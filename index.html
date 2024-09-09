@@ -7,6 +7,7 @@
       name="description"
       content="Discover, bid, and win great deals with BidPoint - your go-to auction site for buying and selling unique items." />
     <title>BidPoint - Home</title>
+    <link rel="icon" sizes="any" href="/assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +21,10 @@
     <header class="bg-black text-white">
       <div class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
         <div class="flex items-center gap-4">
-          <button class="nav-btn text-2xl md:hidden" aria-expanded="false" aria-label="Menu">
+          <button
+            aria-expanded="false"
+            aria-label="Menu"
+            class="nav-btn text-2xl transition-colors hover:text-light-orange md:hidden">
             <i class="nav-icon bx bx-menu"></i>
           </button>
 
@@ -31,7 +35,7 @@
         </div>
 
         <nav
-          class="nav absolute left-0 top-[76px] z-10 hidden w-full justify-self-center bg-black md:static md:block md:w-auto">
+          class="nav absolute left-0 top-[76px] z-10 hidden w-full justify-self-center border-b border-mid-gray bg-black md:static md:block md:w-auto md:border-0">
           <ul
             class="flex flex-col items-center gap-4 pb-6 font-semibold md:flex-row md:gap-8 md:p-0">
             <li>
@@ -85,7 +89,7 @@
         <div class="mb-8 flex items-center justify-between border-b border-dark-gray pb-2">
           <h2 class="text-xl font-bold capitalize">Ending soon</h2>
 
-          <a href="/listings/" class="font-semibold capitalize underline underline-offset-4">
+          <a href="/listings/" class="font-semibold capitalize underline-offset-4 hover:underline">
             View all
           </a>
         </div>
@@ -239,7 +243,7 @@
               Don't have an account?
               <button
                 type="button"
-                class="goto-register-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-register-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Register now
               </button>
             </p>
@@ -292,7 +296,7 @@
               Already have an account?
               <button
                 type="button"
-                class="goto-login-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-login-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Login
               </button>
             </p>
@@ -396,7 +400,7 @@
       </template>
 
       <template id="alert-template">
-        <div class="alert-container fixed bottom-6 flex w-full justify-center">
+        <div class="alert-container fixed bottom-6 z-10 flex w-full justify-center">
           <div class="alert-content flex items-center gap-2 rounded-md bg-white p-3 font-medium">
             <i class="alert-icon text-xl"></i>
             <p class="alert-message"></p>

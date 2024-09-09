@@ -7,6 +7,7 @@
       name="description"
       content="Browse and bid on unique items in our diverse auction listings at BidPoint." />
     <title>BidPoint - Listings</title>
+    <link rel="icon" sizes="any" href="/assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +21,10 @@
     <header class="bg-dark-gray text-white">
       <div class="container grid h-[76px] grid-cols-2 items-center md:grid-cols-3">
         <div class="flex items-center gap-4">
-          <button class="nav-btn text-2xl md:hidden" aria-expanded="false" aria-label="Menu">
+          <button
+            aria-expanded="false"
+            aria-label="Menu"
+            class="nav-btn text-2xl transition-colors hover:text-light-orange md:hidden">
             <i class="nav-icon bx bx-menu"></i>
           </button>
 
@@ -188,7 +192,7 @@
               Don't have an account?
               <button
                 type="button"
-                class="goto-register-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-register-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Register now
               </button>
             </p>
@@ -241,7 +245,7 @@
               Already have an account?
               <button
                 type="button"
-                class="goto-login-btn font-semibold capitalize underline underline-offset-4">
+                class="goto-login-btn font-semibold capitalize underline-offset-4 hover:underline">
                 Login
               </button>
             </p>
@@ -345,7 +349,7 @@
       </template>
 
       <template id="alert-template">
-        <div class="alert-container fixed bottom-6 flex w-full justify-center">
+        <div class="alert-container fixed bottom-6 z-10 flex w-full justify-center">
           <div class="alert-content flex items-center gap-2 rounded-md bg-white p-3 font-medium">
             <i class="alert-icon text-xl"></i>
             <p class="alert-message"></p>
