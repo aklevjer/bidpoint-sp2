@@ -1,5 +1,6 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { login } from "../../api/auth/index.mjs";
+import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
@@ -25,6 +26,8 @@ export function setLoginListener() {
   const loginBtn = document.querySelector(".auth-login-btn");
 
   if (loginBtn) {
-    loginBtn.addEventListener("click", () => openModal("login"));
+    loginBtn.addEventListener("click", () => {
+      isLoggedIn() ? (location.href = "/profile/") : openModal("login");
+    });
   }
 }

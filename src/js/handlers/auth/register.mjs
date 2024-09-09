@@ -1,5 +1,6 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { register, login } from "../../api/auth/index.mjs";
+import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
@@ -28,6 +29,8 @@ export function setRegisterListener() {
   const registerBtn = document.querySelector(".register-btn");
 
   if (registerBtn) {
-    registerBtn.addEventListener("click", () => openModal("register"));
+    registerBtn.addEventListener("click", () => {
+      isLoggedIn() ? (location.href = "/profile/") : openModal("register");
+    });
   }
 }

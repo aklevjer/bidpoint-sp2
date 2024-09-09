@@ -1,9 +1,9 @@
 export function formatMedia(listingTitle, thumbnailContainer) {
   const images = thumbnailContainer.querySelectorAll("img");
 
-  const media = [...images].map((image, index) => ({
+  const media = [...images].map((image) => ({
     url: image.src,
-    alt: `${listingTitle} - Image ${index + 1}`,
+    alt: listingTitle,
   }));
 
   return media;
