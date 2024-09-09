@@ -2,9 +2,9 @@ import { getListingById } from "../api/listings/index.mjs";
 import { renderSingleListing } from "../handlers/listings/index.mjs";
 import { clearElement } from "../utils/html/index.mjs";
 import { setPageTitle } from "../utils/misc/index.mjs";
-import { ImageGallery, setGoBackListener, showAlert } from "../handlers/ui/index.mjs";
-import { setLoginListener } from "../handlers/auth/index.mjs";
+import { setLoginListener, setInterceptListeners } from "../handlers/auth/index.mjs";
 import { setBidFormListener, setShowAllListener } from "../handlers/bids/index.mjs";
+import { ImageGallery, setGoBackListener, showAlert } from "../handlers/ui/index.mjs";
 
 export async function singleListingPage({ id }) {
   if (!id) {
@@ -31,6 +31,7 @@ export async function singleListingPage({ id }) {
     setBidFormListener(id);
     setShowAllListener();
     setGoBackListener();
+    setInterceptListeners();
   } catch (error) {
     clearElement(singleContainer);
     showAlert("error", "Oops! Failed to load listing. Please try again later.", singleContainer);
