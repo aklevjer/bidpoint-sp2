@@ -10,13 +10,13 @@ export function updateListingBidForm(listingClone, listingData) {
   const endsAtTime = new Date(endsAt).getTime();
   const hasEnded = endsAtTime < Date.now();
 
-  const isUserSeller = seller.name === username;
+  const isOwner = seller.name === username;
   const isUserLoggedIn = Boolean(username);
 
   if (hasEnded) {
     bidForm.remove();
     bidFormLabel.textContent = "This listing has ended, bidding is no longer available.";
-  } else if (isUserSeller) {
+  } else if (isOwner) {
     bidForm.remove();
     bidFormLabel.textContent = "You cannot bid on your own listing.";
   } else if (isUserLoggedIn) {
