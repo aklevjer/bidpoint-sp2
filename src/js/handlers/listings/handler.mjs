@@ -3,7 +3,25 @@ import { searchListings } from "../../api/listings/index.mjs";
 import { hideElement, clearElement } from "../../utils/html/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Class representing a handler for loading and managing listings.
+ *
+ * @example
+ * ```js
+ * import { getListings } from "../api/listings/index.mjs";
+ *
+ * const listingsContainer = document.querySelector(".listings-container");
+ * const listingsHandler = new ListingsHandler(listingsContainer);
+ * listingsHandler.setCallback(getListings);
+ * ```
+ */
 export class ListingsHandler {
+  /**
+   * Create a ListingsHandler instance.
+   *
+   * @param {HTMLElement} container - The container element where listings will be rendered.
+   * @param {number} [limit=4] - The maximum number of listings to display (default is 4).
+   */
   constructor(container, limit = 4) {
     this.limit = limit;
     this.currentPage = 1;
@@ -21,6 +39,9 @@ export class ListingsHandler {
     }
   }
 
+  /**
+   * Loads listings using the provided fetch callback and params.
+   */
   async loadListings() {
     hideElement(this.loader, false);
 
@@ -48,6 +69,12 @@ export class ListingsHandler {
     }
   }
 
+  /**
+   * Updates the search result label with the number of results and query.
+   *
+   * @param {number} resultsCount - The number of search results.
+   * @param {string} searchQuery - The search query.
+   */
   updateResults(resultsCount, searchQuery) {
     if (!this.resultsLabel) return;
 
@@ -59,15 +86,24 @@ export class ListingsHandler {
     hideElement(this.resultsLabel, !this.isSearching);
   }
 
+  /**
+   * Sets up an event listener for the "show more" button to load the next page of listings.
+   */
   setupShowMore() {
     this.showMoreBtn.addEventListener("click", () => this.loadNextPage());
   }
 
+  /**
+   * Loads the next page of listings.
+   */
   loadNextPage() {
     this.currentPage++;
     this.loadListings();
   }
 
+  /**
+   * Resets the state of the listings handler, clearing and hiding elements.
+   */
   reset() {
     this.currentPage = 1;
     clearElement(this.container);
@@ -75,6 +111,12 @@ export class ListingsHandler {
     hideElement(this.showMoreBtn);
   }
 
+  /**
+   * Sets the fetch callback and parameters for loading listings.
+   *
+   * @param {function} callback - The callback function to fetch listings.
+   * @param {...any} params - Additional parameters for the callback function.
+   */
   setCallback(callback, ...params) {
     this.fetchCallback = callback;
     this.fetchParams = [...params];

@@ -4,6 +4,13 @@ import { createUserMenu } from "../../../templates/ui/index.mjs";
 import { toggleUserMenu, showAlert } from "../index.mjs";
 import { handleLogout } from "../../auth/index.mjs";
 
+/**
+ * Sets up the header with user-specific elements when a user is logged in.
+ * Fetches and stores the user's profile, then creates and inserts a user menu.
+ * Displays an error alert if fetching the profile fails.
+ *
+ * @param {HTMLElement} container - The container element to insert the user menu into.
+ */
 export async function setupLoggedInHeader(container) {
   const { name } = storage.get("profile");
 

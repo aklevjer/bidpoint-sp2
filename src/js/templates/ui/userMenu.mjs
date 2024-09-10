@@ -1,6 +1,12 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 import { DEFAULT_AVATAR_IMG } from "../../constants/index.mjs";
 
+/**
+ * Creates and populates a user menu template.
+ *
+ * @param {Object} userData - The user data used to populate the template.
+ * @returns {Object} An object containing the cloned user menu template, the user menu button and the logout button.
+ */
 export function createUserMenu(userData) {
   const userMenuClone = getTemplateClone("user-menu");
   const userMenuBtn = userMenuClone.querySelector(".user-menu-btn");

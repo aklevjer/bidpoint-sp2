@@ -1,5 +1,8 @@
 import * as pages from "../pages/index.mjs";
 
+/**
+ * Handles routing logic based on the current URL path.
+ */
 export default function router() {
   const url = new URL(location.href);
   const path = url.pathname;

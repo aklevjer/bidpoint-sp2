@@ -5,6 +5,13 @@ import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Creates a new listing when the listing form is submitted.
+ * Redirects to the created listing page on success.
+ * Displays an error alert if the creation fails.
+ *
+ * @param {Event} event - The event object representing the listing form submission.
+ */
 export async function handleCreateListing(event) {
   event.preventDefault();
 
@@ -37,6 +44,9 @@ export async function handleCreateListing(event) {
   }
 }
 
+/**
+ * Sets up an event listener for the "create listing" button to open the listing modal.
+ */
 export function setCreateListingListener() {
   const createListingBtn = document.querySelector(".create-listing-btn");
 

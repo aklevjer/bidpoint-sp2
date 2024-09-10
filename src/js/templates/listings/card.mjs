@@ -2,6 +2,12 @@ import { getTemplateClone } from "../../utils/html/index.mjs";
 import { getTimeLeft, getCurrentBid } from "../../utils/listings/index.mjs";
 import { DEFAULT_LISTING_IMG } from "../../constants/index.mjs";
 
+/**
+ * Creates and populates a listing card template.
+ *
+ * @param {Object} listingData - The data of the listing used to populate the template.
+ * @returns {DocumentFragment} The populated listing card template.
+ */
 export function createListingCard(listingData) {
   const cardClone = getTemplateClone("listing-card");
   const cardLink = cardClone.querySelector(".listing-card-link");

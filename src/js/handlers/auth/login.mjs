@@ -4,6 +4,13 @@ import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Logs in to an account when the login form is submitted.
+ * Reloads the page on successful login.
+ * Displays an error alert if login fails.
+ *
+ * @param {Event} event - The event object representing the login form submission.
+ */
 export async function handleLogin(event) {
   event.preventDefault();
 
@@ -22,6 +29,9 @@ export async function handleLogin(event) {
   }
 }
 
+/**
+ * Sets up an event listener for the login button to open the login modal.
+ */
 export function setLoginListener() {
   const loginBtn = document.querySelector(".auth-login-btn");
 

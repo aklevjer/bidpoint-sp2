@@ -4,6 +4,13 @@ import { isLoggedIn } from "../../utils/misc/index.mjs";
 import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
+/**
+ * Registers a new account when the registration form is submitted and logs in the user.
+ * Reloads the page on successful registration and login.
+ * Displays an error alert if registration or login fails.
+ *
+ * @param {Event} event - The event object representing the register form submission.
+ */
 export async function handleRegister(event) {
   event.preventDefault();
 
@@ -25,6 +32,9 @@ export async function handleRegister(event) {
   }
 }
 
+/**
+ * Sets up an event listener for the register button to open the register modal.
+ */
 export function setRegisterListener() {
   const registerBtn = document.querySelector(".register-btn");
 

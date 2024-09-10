@@ -1,6 +1,12 @@
 import { DEFAULT_LISTING_IMG } from "../../../constants/index.mjs";
 import { hideElement } from "../../../utils/html/index.mjs";
 
+/**
+ * Updates the image within a listing template.
+ *
+ * @param {DocumentFragment} listingClone - The cloned listing template containing the image.
+ * @param {Object} listingData - The data of the listing.
+ */
 export function updateListingImage(listingClone, listingData) {
   const listingImg = listingClone.querySelector(".listing-image");
   const prevBtn = listingClone.querySelector(".prev-btn");

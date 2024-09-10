@@ -2,6 +2,12 @@ import { sortBidsByAmount } from "../../../utils/listings/index.mjs";
 import { updateListingBid } from "./index.mjs";
 import { hideElement } from "../../../utils/html/index.mjs";
 
+/**
+ * Updates the bids section within a listing template.
+ *
+ * @param {DocumentFragment} listingClone - The cloned listing template containing the bids list.
+ * @param {Object} listingData - The data of the listing.
+ */
 export function updateListingBids(listingClone, listingData) {
   const bidsList = listingClone.querySelector(".bids-list");
   const bidItem = listingClone.querySelector(".bid-item");

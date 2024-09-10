@@ -6,6 +6,17 @@ import { setLoginListener, setInterceptListeners } from "../handlers/auth/index.
 import { setBidFormListener, setShowAllListener } from "../handlers/bids/index.mjs";
 import { ImageGallery, setGoBackListener, showAlert } from "../handlers/ui/index.mjs";
 
+/**
+ * Handles the logic for the single listing page.
+ *
+ * - Displays the listing with the provided ID.
+ * - Sets the page title with the listing title.
+ * - Sets up the image gallery if the listing contains multiple images.
+ * - Adds necessary event listeners for interactions.
+ *
+ * @param {Object} params - Parameters from the URL, including the listing ID.
+ * @param {string} params.id - The ID of the listing.
+ */
 export async function singleListingPage({ id }) {
   if (!id) {
     location.href = "/listings/";

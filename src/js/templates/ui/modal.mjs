@@ -1,5 +1,11 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
+/**
+ * Creates and populates a modal template.
+ *
+ * @param {string} modalType - The type of modal to be created (i.e. "login", "register").
+ * @returns {Object} An object containing the cloned modal template and the modal element.
+ */
 export function createModal(modalType) {
   const modalClone = getTemplateClone("modal");
   const modal = modalClone.querySelector(".modal");
