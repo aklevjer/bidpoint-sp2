@@ -10,6 +10,16 @@ import {
   setUpdateProfileListener,
 } from "../handlers/profiles/index.mjs";
 
+/**
+ * Handles the logic for the profile page.
+ *
+ * - Displays the profile and listings for the specified user, or the logged-in user if none provided.
+ * - Sets the page title with the user's name.
+ * - Adds event listeners for the tabs and edit profile button.
+ *
+ * @param {Object} params - Parameters from the URL, including the user.
+ * @param {string} [params.user] - The name of the user (Optional).
+ */
 export async function profilePage({ user }) {
   if (!isLoggedIn()) {
     location.href = "/";
