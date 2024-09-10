@@ -1,3 +1,6 @@
+/**
+ * Toggles the display of the navigation.
+ */
 export function toggleNav() {
   const nav = document.querySelector(".nav");
   const navBtn = document.querySelector(".nav-btn");

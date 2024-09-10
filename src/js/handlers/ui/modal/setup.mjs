@@ -4,6 +4,12 @@ import { handleUpdateProfile } from "../../profiles/index.mjs";
 import { handleCreateListing, handleAddThumbnail } from "../../listings/index.mjs";
 import { swapModal, closeModal, closeModalOutside, closeModalEscKey } from "./index.mjs";
 
+/**
+ * Configures the modal with event listeners based on its type.
+ *
+ * @param {HTMLElement} modal - The modal element to set up.
+ * @param {string} modalType - The type of modal being set up (i.e. "login", "register").
+ */
 export function setupModal(modal, modalType) {
   const modalForm = modal.querySelector("form");
   const modalCloseBtn = modal.querySelector(".modal-close-btn");

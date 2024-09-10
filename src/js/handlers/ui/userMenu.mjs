@@ -1,5 +1,10 @@
 import { toggleNav } from "./index.mjs";
 
+/**
+ * Toggles the display of the user menu.
+ *
+ * @param {Event} event - The event object representing the user menu button click event.
+ */
 export function toggleUserMenu(event) {
   event.stopPropagation();
 
