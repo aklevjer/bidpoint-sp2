@@ -7,6 +7,13 @@ import {
   isAmountValid,
 } from "./index.mjs";
 
+/**
+ * Validates an input value based on its type and specific criteria.
+ * Displays or hides an error message on the input element depending on the validation result.
+ *
+ * @param {HTMLElement} inputElement - The input or textarea element to be validated.
+ * @returns {boolean} `true` if the input value is valid, `false` otherwise.
+ */
 export function validateInput(inputElement) {
   const { name, value } = inputElement;
 

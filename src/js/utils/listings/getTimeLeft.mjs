@@ -1,3 +1,11 @@
+/**
+ * Formats the remaining time until a given date into a human-readable string.
+ *
+ * @param {string} dateString - The date to be checked.
+ * @param {boolean} showMinutes - Whether or not to include minutes in the output.
+ *
+ * @returns {string} A string representing the time left in the format "d h m" or "Ended" if the date is in the past.
+ */
 export function getTimeLeft(dateString, showMinutes) {
   const dateNow = new Date();
   const endDate = new Date(dateString);
