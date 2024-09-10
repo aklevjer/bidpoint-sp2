@@ -1,6 +1,12 @@
 import * as storage from "../../utils/storage/index.mjs";
 import { DEFAULT_AVATAR_IMG } from "../../constants/index.mjs";
 
+/**
+ * Updates the profile details within a profile template.
+ *
+ * @param {DocumentFragment} profileClone - The cloned profile template containing the details.
+ * @param {Object} profileData - The data of the profile.
+ */
 export function updateProfileDetails(profileClone, profileData) {
   const profileAvatar = profileClone.querySelector(".profile-avatar");
   const profileEditBtn = profileClone.querySelector(".profile-edit-btn");

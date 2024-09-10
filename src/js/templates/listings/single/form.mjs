@@ -1,5 +1,11 @@
 import * as storage from "../../../utils/storage/index.mjs";
 
+/**
+ * Updates the bid form within a listing template.
+ *
+ * @param {DocumentFragment} listingClone - The cloned listing template containing the bid form.
+ * @param {Object} listingData - The data of the listing.
+ */
 export function updateListingBidForm(listingClone, listingData) {
   const bidForm = listingClone.querySelector(".bid-form");
   const bidFormLabel = listingClone.querySelector(".bid-form-label");

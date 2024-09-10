@@ -1,6 +1,12 @@
 import { formatDate } from "../../../utils/format/index.mjs";
 import { getTimeLeft, getExpiryStatus, getCurrentBid } from "../../../utils/listings/index.mjs";
 
+/**
+ * Updates the meta details within a listing template.
+ *
+ * @param {DocumentFragment} listingClone - The cloned listing template containing the meta elements.
+ * @param {Object} listingData - The data of the listing.
+ */
 export function updateListingMeta(listingClone, listingData) {
   const listingTitle = listingClone.querySelector(".listing-title");
   const listingDescription = listingClone.querySelector(".listing-description");

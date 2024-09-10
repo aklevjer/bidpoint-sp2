@@ -1,5 +1,14 @@
 import { getTemplateClone } from "../../utils/html/index.mjs";
 
+/**
+ * Creates and populates an alert template.
+ *
+ * @param {string} alertType - The type of alert (i.e. "error", "success").
+ * @param {string} alertMessage - The message to display in the alert.
+ * @param {boolean} isToast - Indicates if the alert should be a toast or not.
+ *
+ * @returns {Object} An object containing the cloned alert template and the alert container element.
+ */
 export function createAlert(alertType, alertMessage, isToast) {
   const alertClone = getTemplateClone("alert");
   const alertContainer = alertClone.querySelector(".alert-container");
