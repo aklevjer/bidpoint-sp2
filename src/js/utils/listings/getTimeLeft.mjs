@@ -28,5 +28,5 @@ export function getTimeLeft(dateString, showMinutes) {
   if (hours > 0) timeLeft.push(`${hours}h`);
   if (showMinutes && mins > 0) timeLeft.push(`${mins}m`);
 
-  return timeLeft.join(" ");
+  return timeLeft.length ? timeLeft.join(" ") : "0m";
 }
