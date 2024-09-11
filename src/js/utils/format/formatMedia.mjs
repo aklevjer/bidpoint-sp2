@@ -1,3 +1,5 @@
+import { formatAltText } from "./index.mjs";
+
 /**
  * Formats a media array from a thumbnail container.
  *
@@ -11,7 +13,7 @@ export function formatMedia(listingTitle, thumbnailContainer) {
 
   const media = [...images].map((image) => ({
     url: image.src,
-    alt: listingTitle,
+    alt: formatAltText(listingTitle),
   }));
 
   return media;
