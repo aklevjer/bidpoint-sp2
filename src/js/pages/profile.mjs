@@ -23,6 +23,7 @@ import {
 export async function profilePage({ user }) {
   if (!isLoggedIn()) {
     location.href = "/";
+    return;
   }
 
   const profile = storage.get("profile");

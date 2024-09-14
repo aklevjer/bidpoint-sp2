@@ -43,7 +43,7 @@ export function validateInput(inputElement) {
 
     case "endsAt":
       isValid = isDateTimeValid(value);
-      message = "Select a future date and time";
+      message = "Date/time must be within 1 year";
       break;
 
     case "description":
