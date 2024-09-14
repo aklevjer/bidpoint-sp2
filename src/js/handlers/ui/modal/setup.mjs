@@ -1,4 +1,5 @@
 import * as storage from "../../../utils/storage/index.mjs";
+import { formatDateTime } from "../../../utils/format/index.mjs";
 import { handleLogin, handleRegister } from "../../auth/index.mjs";
 import { handleUpdateProfile } from "../../profiles/index.mjs";
 import { handleCreateListing, handleAddThumbnail } from "../../listings/index.mjs";
@@ -32,8 +33,12 @@ export function setupModal(modal, modalType) {
     }
 
     case "listing": {
+      const endsAtInput = modal.querySelector(".ends-at");
       const addBtn = modal.querySelector(".add-btn");
       const cancelBtn = modal.querySelector(".cancel-btn");
+
+      endsAtInput.min = formatDateTime();
+      endsAtInput.max = formatDateTime(12);
 
       addBtn.addEventListener("click", handleAddThumbnail);
       cancelBtn.addEventListener("click", closeModal);
