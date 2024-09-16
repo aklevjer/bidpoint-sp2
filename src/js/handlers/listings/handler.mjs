@@ -20,7 +20,7 @@ export class ListingsHandler {
    * Create a ListingsHandler instance.
    *
    * @param {HTMLElement} container - The container element where listings will be rendered.
-   * @param {number} [limit=4] - The maximum number of listings to display (default is 4).
+   * @param {number} [limit=4] - The maximum number of listings to display (defaults to 4).
    */
   constructor(container, limit = 4) {
     this.limit = limit;
