@@ -1,11 +1,14 @@
 {
   "name": "bidpoint-sp2",
   "private": true,
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "An auction site developed for Semester Project 2 at Noroff",
   "type": "module",
   "scripts": {
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "vitest run",
+    "test-e2e": "concurrently \"vite\" \"cypress open\"",
+    "test-e2e-cli": "concurrently \"vite\" \"cypress run\"",
     "format": "prettier -w src/**/*.mjs",
     "lint": "eslint src/**/*.mjs",
     "lint-fix": "eslint src/**/*.mjs --cache --fix",
@@ -31,7 +34,11 @@
   "homepage": "https://github.com/aklevjer/bidpoint-sp2#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "cypress": "^13.14.2",
+    "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
+    "eslint-plugin-cypress": "^3.5.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
     "postcss": "^8.4.41",
