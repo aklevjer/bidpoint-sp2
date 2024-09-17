@@ -5,7 +5,10 @@
   "description": "An auction site developed for Semester Project 2 at Noroff",
   "type": "module",
   "scripts": {
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "vitest run",
+    "test-e2e": "concurrently \"vite\" \"cypress open\"",
+    "test-e2e-cli": "concurrently \"vite\" \"cypress run\"",
     "format": "prettier -w src/**/*.mjs",
     "lint": "eslint src/**/*.mjs",
     "lint-fix": "eslint src/**/*.mjs --cache --fix",
