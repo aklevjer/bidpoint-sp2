@@ -18,6 +18,9 @@ export async function handleRegister(event) {
 
   if (!isFormValid(registerForm)) return;
 
+  const submitBtn = event.submitter;
+  submitBtn.disabled = true;
+
   const formData = new FormData(registerForm);
   const account = Object.fromEntries(formData.entries());
 
@@ -28,6 +31,7 @@ export async function handleRegister(event) {
     await login({ email, password });
     location.reload();
   } catch (error) {
+    submitBtn.disabled = false;
     showAlert("error", error.message, registerForm);
   }
 }

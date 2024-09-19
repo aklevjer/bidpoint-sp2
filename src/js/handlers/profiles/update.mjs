@@ -25,6 +25,9 @@ export async function handleUpdateProfile(event) {
 
   if (!isUrlValid) return;
 
+  const submitBtn = event.submitter;
+  submitBtn.disabled = true;
+
   const { name } = storage.get("profile");
 
   const updatedProfile = {
@@ -43,6 +46,7 @@ export async function handleUpdateProfile(event) {
     profileAvatar.src = updatedProfile.avatar.url;
     profileAvatar.alt = updatedProfile.avatar.alt;
   } catch (error) {
+    submitBtn.disabled = false;
     showAlert("error", error.message, profileForm);
   }
 }

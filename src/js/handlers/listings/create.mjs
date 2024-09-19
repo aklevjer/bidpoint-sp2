@@ -19,6 +19,9 @@ export async function handleCreateListing(event) {
 
   if (!isFormValid(createListingForm)) return;
 
+  const submitBtn = event.submitter;
+  submitBtn.disabled = true;
+
   const formData = new FormData(createListingForm);
 
   const title = formData.get("title");
@@ -40,6 +43,7 @@ export async function handleCreateListing(event) {
     const { id } = createdListing.data;
     location.href = `/listings/listing/?id=${id}`;
   } catch (error) {
+    submitBtn.disabled = false;
     showAlert("error", error.message, createListingForm);
   }
 }
