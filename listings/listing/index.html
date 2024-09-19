@@ -466,8 +466,10 @@
 
                       <button
                         type="submit"
-                        class="whitespace-nowrap rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
-                        Bid
+                        class="group relative whitespace-nowrap rounded-md bg-dark-orange px-8 py-2 font-semibold text-white transition-colors hover:bg-dark-gray disabled:cursor-not-allowed">
+                        <span class="group-disabled:invisible">Bid</span>
+                        <div
+                          class="absolute inset-0 m-auto hidden size-6 animate-spin rounded-full border-4 border-x-transparent border-y-white group-disabled:block"></div>
                       </button>
                     </div>
                   </div>

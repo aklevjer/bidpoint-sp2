@@ -19,6 +19,9 @@ async function handlePlaceBid(event, listingId) {
 
   if (!isFormValid(bidForm)) return;
 
+  const submitBtn = event.submitter;
+  submitBtn.disabled = true;
+
   const formData = new FormData(bidForm);
   const bidData = Object.fromEntries(formData.entries());
   bidData.amount = parseInt(bidData.amount, 10);
@@ -28,6 +31,7 @@ async function handlePlaceBid(event, listingId) {
     await singleListingPage({ id: listingId });
     updateHeader();
   } catch (error) {
+    submitBtn.disabled = false;
     toggleInputError(bidForm.amount, error.message, true);
   }
 }
