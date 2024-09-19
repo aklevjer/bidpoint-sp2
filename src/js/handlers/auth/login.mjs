@@ -18,6 +18,9 @@ export async function handleLogin(event) {
 
   if (!isFormValid(loginForm)) return;
 
+  const submitBtn = event.submitter;
+  submitBtn.disabled = true;
+
   const formData = new FormData(loginForm);
   const account = Object.fromEntries(formData.entries());
 
@@ -25,6 +28,7 @@ export async function handleLogin(event) {
     await login(account);
     location.reload();
   } catch (error) {
+    submitBtn.disabled = false;
     showAlert("error", error.message, loginForm);
   }
 }
