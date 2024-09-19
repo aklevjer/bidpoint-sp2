@@ -214,8 +214,10 @@
           <div class="space-y-4">
             <button
               type="submit"
-              class="w-full rounded-md bg-dark-orange py-2 font-semibold text-white transition-colors hover:bg-dark-gray">
-              Register
+              class="group relative w-full rounded-md bg-dark-orange py-2 font-semibold text-white transition-colors hover:bg-dark-gray disabled:cursor-not-allowed">
+              <span class="group-disabled:invisible">Register</span>
+              <div
+                class="absolute inset-0 m-auto hidden size-6 animate-spin rounded-full border-4 border-x-transparent border-y-white group-disabled:block"></div>
             </button>
 
             <p>
