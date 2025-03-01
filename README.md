@@ -55,7 +55,7 @@ USER_PASSWORD=
 
 **To obtain and configure an API key:**
 
-1. Visit the [Noroff API documentation](https://docs.noroff.dev/docs/v2/auth/api-key) for detailed instructions on generating an API key.
+1. Visit the [Noroff API documentation](https://docs.noroff.dev/docs/v2/auth/api-key) to generate an API key.
 2. Use the generated API key as the value for `VITE_API_KEY` in the `.env` file.
 
 **For testing purposes:**
