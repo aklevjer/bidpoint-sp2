@@ -1,7 +1,5 @@
 import { isFormValid } from "../../utils/validation/index.mjs";
 import { register, login } from "../../api/auth/index.mjs";
-import { isLoggedIn } from "../../utils/misc/index.mjs";
-import { openModal } from "../ui/modal/index.mjs";
 import { showAlert } from "../ui/index.mjs";
 
 /**
@@ -33,18 +31,5 @@ export async function handleRegister(event) {
   } catch (error) {
     submitBtn.disabled = false;
     showAlert("error", error.message, registerForm);
-  }
-}
-
-/**
- * Sets up an event listener for the register button to open the register modal.
- */
-export function setRegisterListener() {
-  const registerBtn = document.querySelector(".register-btn");
-
-  if (registerBtn) {
-    registerBtn.addEventListener("click", () => {
-      isLoggedIn() ? (location.href = "/profile/") : openModal("register");
-    });
   }
 }
